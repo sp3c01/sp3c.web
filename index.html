@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+  body { 
+    background-color: black; 
+    color: white; 
+    background-image: url('media.html/roxo.jpg'); /* Adicione o caminho para sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+  }
+  .login-container { 
+    position: fixed; /* Posicionamento fixo */
+    top: 50%; /* Metade da altura da tela */
+    left: 50%; /* Metade da largura da tela */
+    transform: translate(-50%, -50%); /* Ajuste fino para centralizar exatamente */
+    max-width: 300px; 
+    background: rgba(0, 0, 0, 0.7); /* Fundo translúcido para o formulário */
+    border-radius: 10px; /* Bordas arredondadas para o formulário */
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Sombra para destacar o formulário */
+  }
+  input[type="text"], input[type="password"], button { 
+    width: 100%; 
+    padding: 12px 20px; 
+    margin: 8px 0; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
+  }
+  button { 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+  }
+  button:hover { opacity: 0.8; }
+  .audio-container { 
+    display: none; 
+    position: fixed; /* Posicionamento fixo */
+    top: 50%; /* Metade da altura da tela */
+    left: 50%; /* Metade da largura da tela */
+    transform: translate(-50%, -50%); /* Ajuste fino para centralizar exatamente */
+    opacity: 0.5; /* Torna o áudio transparente */
+  }
+  audio { 
+    max-width: 300px; /* Limita a largura do player de áudio */
+  }
+  .emoji { 
+    font-size: 48px; /* Tamanho do emoji */
+    margin-top: 20px; /* Espaçamento superior */
+    text-align: center; /* Alinhamento central */
+  }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+  <label for="uname"><b>Usuário</b></label>
+  <input type="text" placeholder="Digite o usuário" name="uname" required>
+
+  <label for="psw"><b>Senha</b></label>
+  <input type="password" placeholder="Digite a senha" name="psw" required>
+
+  <button onclick="login()">Login</button>
+</div>
+
+<div class="audio-container">
+  <audio controls>
+    <source src="media.html/aesthetic.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+  <div class="emoji">🐧</div> <!-- Emoji adicionado -->
+</div>
+
+<script>
+function login() {
+  var username = document.getElementsByName("uname")[0].value;
+  var password = document.getElementsByName("psw")[0].value;
+  
+  if(username === "sp3c" && password === "123") {
+    document.querySelector('.login-container').style.display = 'none';
+    document.querySelector('.audio-container').style.display = 'block';
+  } else {
+    alert("Usuário ou senha incorretos!");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,94 +1,410 @@
-<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="login-box">
+  <h2>Login</h2>
+  <form id="loginForm">
+    <div class="user-box">
+      <input type="text" id="username" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" id="password" required="">
+      <label>Password</label>
+    </div>
+    <button type="submit">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </button>
+  </form>
+</div>
+
+<style>
+  html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.login-box button span {
+  position: absolute;
+  display: block;
+}
+
+.login-box button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+</style>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event){
+    event.preventDefault();
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    
+    // Aqui você pode adicionar a lógica para verificar se o username e a senha estão corretos
+    // Exemplo:
+    if(username === "plus" && password === "snr8qk92k") {
+        // Se o username e a senha estiverem corretos, redirecione o usuário para outra página
+        window.location.href = "https://netflixo-d.vercel.app/";
+    } else {
+        // Se o username ou a senha estiverem incorretos, exiba uma mensagem de erro
+        alert("Username ou senha incorretos. Tente novamente.");
+    }
+});
+</script>
+
+<body><!DOCTYPE html>
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
+<title>Netflixo</title>
 <style>
-  body { 
-    background-color: black; 
-    color: white; 
-    background-image: url('media.html/roxo.jpg'); /* Adicione o caminho para sua imagem de fundo */
+  body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace; /* Fonte estilo terminal */
+  }
+
+  #gif-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Coloque atrás de tudo, incluindo o universo */
+    background-image: url('https://images.hdqwalls.com/download/anonymous-hacker-chronicles-xg-1366x768.jpg');
     background-size: cover;
     background-position: center;
+    opacity: 0.8; /* Ajuste a opacidade conforme desejado */
   }
-  .login-container { 
-    position: fixed; /* Posicionamento fixo */
-    top: 50%; /* Metade da altura da tela */
-    left: 50%; /* Metade da largura da tela */
-    transform: translate(-50%, -50%); /* Ajuste fino para centralizar exatamente */
-    max-width: 300px; 
-    background: rgba(0, 0, 0, 0.7); /* Fundo translúcido para o formulário */
-    border-radius: 10px; /* Bordas arredondadas para o formulário */
+
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Inicialmente oculta */
+    height: 100%;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo da aba */
     padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Sombra para destacar o formulário */
+    color: #ffffff; /* Cor do texto verde */
+    overflow-y: auto; /* Adicionado rolagem vertical se necessário */
+    transition: left 0.3s; /* Adicionado transição suave para abrir/fechar */
+    z-index: 1; /* Colocado abaixo do botão */
+    border-right: 2px solid #f00f; /* Adicionado uma borda direita roxa */
+    border-top-right-radius: 15px; /* Borda superior direita arredondada */
+    border-bottom-right-radius: 15px; /* Borda inferior direita arredondada */
   }
-  input[type="text"], input[type="password"], button { 
-    width: 100%; 
-    padding: 12px 20px; 
-    margin: 8px 0; 
-    display: inline-block; 
-    border: 1px solid #ccc; 
-    box-sizing: border-box; 
-  }
-  button { 
-    background-color: #4CAF50; 
-    color: white; 
-    border: none; 
-    cursor: pointer; 
-  }
-  button:hover { opacity: 0.8; }
-  .audio-container { 
-    display: none; 
-    position: fixed; /* Posicionamento fixo */
-    top: 50%; /* Metade da altura da tela */
-    left: 50%; /* Metade da largura da tela */
-    transform: translate(-50%, -50%); /* Ajuste fino para centralizar exatamente */
-    opacity: 0.5; /* Torna o áudio transparente */
-  }
-  audio { 
-    max-width: 300px; /* Limita a largura do player de áudio */
-  }
-  .emoji { 
-    font-size: 48px; /* Tamanho do emoji */
-    margin-top: 20px; /* Espaçamento superior */
-    text-align: center; /* Alinhamento central */
-  }
-</style>
-</head>
-<body>
 
-<div class="login-container">
-  <label for="uname"><b>Usuário</b></label>
-  <input type="text" placeholder="Digite o usuário" name="uname" required>
-
-  <label for="psw"><b>Senha</b></label>
-  <input type="password" placeholder="Digite a senha" name="psw" required>
-
-  <button onclick="login()">Login</button>
-</div>
-
-<div class="audio-container">
-  <audio controls>
-    <source src="media.html/aesthetic.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio HTML5.
-  </audio>
-  <div class="emoji">🐧</div> <!-- Emoji adicionado -->
-</div>
-
-<script>
-function login() {
-  var username = document.getElementsByName("uname")[0].value;
-  var password = document.getElementsByName("psw")[0].value;
-  
-  if(username === "sp3c" && password === "123") {
-    document.querySelector('.login-container').style.display = 'none';
-    document.querySelector('.audio-container').style.display = 'block';
-  } else {
-    alert("Usuário ou senha incorretos!");
+  #sidebar.open {
+    left: 0; /* Exibir a aba quando a classe "open" for adicionada */
   }
-}
-</script>
 
-</body>
-</html>
+  .pdf-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .pdf-item:hover {
+    text-decoration: underline;
+  }
+
+  .login-container {
+    display: none; /* Oculta o container de login */
+  }
+
+  /* Estilos do sistema solar */
+  #universo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Mantém o sistema solar atrás da tela de login */
+  }
+
+  h1 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    max-width: 90%; /* Definindo uma largura máxima */
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 3em;
+    z-index: 4; /* Título fica na frente de tudo */
+    animation: entrada 1.5s ease-in-out forwards;
+  }
+  @keyframes entrada {
+    0% {
+      transform: translateX(-50%) scale(0);
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+
+  #sol {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: yellow;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Sol fica na frente das estrelas */
+    box-shadow: 0 0 50px 10px yellow;
+    cursor: pointer; /* Adicionado cursor pointer para indicar clicabilidade */
+  }
+
+  /* Estilo do botão de abrir PDF */
+  #open-pdf-btn {
+    position: fixed;
+    bottom: 50px; /* Ajustado para ficar um pouco mais para baixo */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background-color: #0f0; /* Cor verde para o botão */
+    border-radius: 50%; /* Botão redondo */
+    border: none;
+    color: #000; /* Cor do texto preto */
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 3; /* Colocado acima do universo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adicionado sombra */
+  }
+
+  /* Ícone do botão de abrir PDF */
+  #open-pdf-btn i {
+    font-size: 2em;
+  }
+
+  /* Animação de código digitado */
+  .codigo {
+    animation: type 3s steps(40, end);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right:.15em solid #0f0; /* Efeito de cursor verde */
+  }
+
+  @keyframes type {
+    from { width: 0; }
+  }
+
+  /* Estilos da tela de login */
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    z-index: 3; /* Colocado acima do conteúdo */
+  }
+
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .login-box .user-box {
+    position: relative;
+  }
+
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }</body>

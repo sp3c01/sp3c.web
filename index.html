@@ -1,218 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<div class="login-box">
-  <h2>Login</h2>
-  <form id="loginForm">
-    <div class="user-box">
-      <input type="text" id="username" required="">
-      <label>Username</label>
-    </div>
-    <div class="user-box">
-      <input type="password" id="password" required="">
-      <label>Password</label>
-    </div>
-    <button type="submit">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </button>
-  </form>
-</div>
-
-<style>
-  html {
-  height: 100%;
-}
-body {
-  margin:0;
-  padding:0;
-  font-family: sans-serif;
-  background: linear-gradient(#141e30, #243b55);
-}
-
-.login-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-}
-
-.login-box h2 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #fff;
-  text-align: center;
-}
-
-.login-box .user-box {
-  position: relative;
-}
-
-.login-box .user-box input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
-.login-box .user-box label {
-  position: absolute;
-  top:0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: .5s;
-}
-
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-  top: -20px;
-  left: 0;
-  color: #03e9f4;
-  font-size: 12px;
-}
-
-.login-box form button {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #03e9f4;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.login-box button:hover {
-  background: #03e9f4;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 100px #03e9f4;
-}
-
-.login-box button span {
-  position: absolute;
-  display: block;
-}
-
-.login-box button span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
-  animation: btn-anim1 1s linear infinite;
-}
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,100% {
-    left: 100%;
-  }
-}
-
-.login-box button span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
-  animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,100% {
-    top: 100%;
-  }
-}
-
-.login-box button span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
-  animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,100% {
-    right: 100%;
-  }
-}
-
-.login-box button span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
-  animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
-}
-
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,100% {
-    bottom: 100%;
-  }
-}
-
-</style>
-
-<script>
-document.getElementById("loginForm").addEventListener("submit", function(event){
-    event.preventDefault();
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    
-    // Aqui você pode adicionar a lógica para verificar se o username e a senha estão corretos
-    // Exemplo:
-    if(username === "cinep3c" && password === "bGL3@^en4rN!VZiyjBFUgpRbG") {
-        // Se o username e a senha estiverem corretos, redirecione o usuário para outra página
-        window.location.href = "https://netflixo-d.vercel.app/";
-    } else {
-        // Se o username ou a senha estiverem incorretos, exiba uma mensagem de erro
-        alert("Username ou senha incorretos. Tente novamente.");
-    }
-});
-</script>
-
-<body><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
@@ -232,7 +18,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
     width: 100%;
     height: 100%;
     z-index: -2; /* Coloque atrás de tudo, incluindo o universo */
-    background-image: url('https://images.hdqwalls.com/download/anonymous-hacker-chronicles-xg-1366x768.jpg');
+    background-image: url('https://images.hdqwalls.com/download/reddit-place-2022-4p-2160x3840.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.8; /* Ajuste a opacidade conforme desejado */
@@ -250,9 +36,10 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
     overflow-y: auto; /* Adicionado rolagem vertical se necessário */
     transition: left 0.3s; /* Adicionado transição suave para abrir/fechar */
     z-index: 1; /* Colocado abaixo do botão */
-    border-right: 2px solid #f00f; /* Adicionado uma borda direita roxa */
     border-top-right-radius: 15px; /* Borda superior direita arredondada */
     border-bottom-right-radius: 15px; /* Borda inferior direita arredondada */
+    font-family: 'Netflix Sans', sans-serif; /* Adicionando a fonte da Netflix */
+    /* Se a fonte 'Netflix Sans' não estiver disponível, o navegador usará uma fonte sans-serif padrão */
   }
 
   #sidebar.open {
@@ -272,15 +59,6 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
     display: none; /* Oculta o container de login */
   }
 
-  /* Estilos do sistema solar */
-  #universo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Mantém o sistema solar atrás da tela de login */
-  }
 
   h1 {
     position: absolute;
@@ -304,41 +82,24 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
     }
   }
 
-  #sol {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150px;
-    height: 150px;
-    background: yellow;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2; /* Sol fica na frente das estrelas */
-    box-shadow: 0 0 50px 10px yellow;
-    cursor: pointer; /* Adicionado cursor pointer para indicar clicabilidade */
-  }
 
   /* Estilo do botão de abrir PDF */
   #open-pdf-btn {
     position: fixed;
     bottom: 50px; /* Ajustado para ficar um pouco mais para baixo */
-    left: 50%;
+    left: 75%;
     transform: translateX(-50%);
     width: 80px;
     height: 80px;
-    background-color: #0f0; /* Cor verde para o botão */
     border-radius: 50%; /* Botão redondo */
     border: none;
-    color: #000; /* Cor do texto preto */
     font-size: 1em;
     cursor: pointer;
     z-index: 3; /* Colocado acima do universo */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adicionado sombra */
-  }
-
-  /* Ícone do botão de abrir PDF */
-  #open-pdf-btn i {
-    font-size: 2em;
+    background-image: url('https://images.hdqwalls.com/download/n-qhd-1280x720.jpg'); /* Adiciona imagem de fundo */
+    background-size: cover; /* Assegura que a imagem cubra completamente o botão */
+    background-position: center; /* Centraliza a imagem no botão */
   }
 
   /* Animação de código digitado */
@@ -353,58 +114,75 @@ document.getElementById("loginForm").addEventListener("submit", function(event){
     from { width: 0; }
   }
 
-  /* Estilos da tela de login */
-  .login-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
-    z-index: 3; /* Colocado acima do conteúdo */
+  /* Estilo da imagem na aba */
+  .imagem-aba {
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 20px; /* Movendo a imagem um pouco para a direita */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra suave */
+    transition: transform 0.3s ease-in-out; /* Adiciona transição suave ao passar o mouse */
   }
 
-  .login-box h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
+  .imagem-aba:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente a imagem ao passar o mouse */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Adiciona uma sombra mais intensa ao passar o mouse */
   }
 
-  .login-box .user-box {
-    position: relative;
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Adicionando fonte da Netflix -->
+<link href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@400;700&display=swap" rel="stylesheet">
+<!-- Adicionando fonte de ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<!-- Div para conter o GIF de fundo -->
+<div id="gif-background"></div>
+
+<div id="sidebar">
+  
+  <img class="imagem-aba" src="https://images.hdqwalls.com/download/toy-story-4-2019-movie-ha-640x960.jpg" alt="Imagem na aba" onclick="openPDF('https://drive.google.com/file/d/1ffF-d32W0alBLqurZx6dftXO02DCkE7g/view?usp=drivesdk', 'Toy Story 4 PDF')">
+  
+  <img class="imagem-aba" src="https://images.hdqwalls.com/download/scooby-doo-on-zombie-island-ny-640x960.jpg" alt="Imagem na aba" onclick="openPDF('https://drive.google.com/file/d/1HmoJwEpUs6kuMbLQjcw1k90DfadBlEgZ/view?usp=drivesdk', 'Scooby doo PDF')">
+  
+  <img class="imagem-aba" src="https://images.hdqwalls.com/download/the-simpsons-tv-series-4k-v6-640x960.jpg" alt="Imagem na aba" onclick="openPDF('https://drive.google.com/file/d/1Oivn9FQlVG_-61xh5zByo_3bn8bEnqag/view?usp=drivesdk', 'Os Simpsons PDF')">
+  
+  <img class="imagem-aba" src="https://images.hdqwalls.com/download/wall-e-2008-5k-22-640x960.jpg" alt="Imagem na aba" onclick="openPDF('https://drive.google.com/file/d/1VqgRUBoCFZ-RzJAqA8bnoc645klrCwCj/view?usp=drivesdk', 'Wall-e PDF')">
+  
+  <img class="imagem-aba" src="https://images.hdqwalls.com/download/zootopia-judy-hopps-and-nick-hd-640x960.jpg" alt="imagem na aba" onclick="openPDF('https://drive.google.com/file/d/12p3t7dLypVfa5aAesAC03hNQ7AZo8quQ/view?usp=drivesdk', 'Zootopia PDF')">
+  
+  <img class="imagem-aba" src="https://images.hdqwalls.com/download/inside-out-2-movie-2024-w4-640x960.jpg" alt="imagem na aba" onclick="openPDF('https://drive.google.com/file/d/1IqmbGx12gUcMgjJEkqRB8uRIUt0_Hr85/view?usp=drivesdk', 'Divertidamente PDF')">
+  
+  <img class="imagem-aba" src="https://i.im.ge/2024/05/06/ZRWoyK.1000042235.jpeg"  alt="imagem na aba" onclick="openPDF('https://drive.google.com/file/d/1YnsuBzUPZwbNgYFIS1YU08lHUT_XLIpJ/view?usp=drivesdk', 'Ben 10 O Segredo Do Omnitrix PDF')">
+  
+  <img class="imagem-aba" src="https://i.im.ge/2024/05/06/ZRZOSL.1000042237.jpeg"  alt="imagem na aba" onclick="openPDF('https://drive.google.com/file/d/1u5yzYkKw6l1hUI0R-NNQBlhCwyJyGJW2/view?usp=drivesdk', 'Ben 10 E Mutante Rex - Heróis Unidos PDF')">
+    
+</div>
+
+<button id="open-pdf-btn" onclick="toggleSidebar()"></button> <!-- Botão com a imagem de fundo -->
+
+<script>
+  // Função para abrir ou fechar a aba lateral
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
   }
 
-  .login-box .user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-  }
-  .login-box .user-box label {
-    position: absolute;
-    top:0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
+  // Função para abrir PDF em uma nova aba
+  function openPDF(url, title) {
+    window.open(url, '_blank');
   }
 
-  .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #03e9f4;
-    font-size: 12px;
-  }</body>
+  // Cria estrelas no fundo
+  for (let i = 0; i < 200; i++) {
+    let estrela = document.createElement('div');
+    estrela.className = 'estrela';
+    estrela.style.top = Math.random() * 100 + 'vh';
+    estrela.style.left = Math.random() * 100 + 'vw';
+    document.getElementById('universo').appendChild(estrela);
+  }
+</script>
+
+</body>
+</html>

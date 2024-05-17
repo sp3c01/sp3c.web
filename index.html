@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Netflixo</title>
+<title>DarkNetPirates</title>
 <style>
   body {
     margin: 0;
@@ -18,7 +19,7 @@
     width: 100%;
     height: 100%;
     z-index: -10; /* Coloque atrás de tudo, incluindo o universo */
-    background-image: url('https://i.im.ge/2024/05/08/ZVUifP.1000043001.jpeg');
+    background-image: url('https://i.im.ge/2024/05/17/Ko31w9.1000050550.png');
     background-size: cover;
     background-position: center;
     opacity: 5; /* Ajuste a opacidade conforme desejado */
@@ -81,32 +82,164 @@
   }
 
   /* Estilo do botão de abrir PDF */
-  #open-pdf-btn {
-    position: fixed;
-    bottom: 50px; /* Ajustado para ficar um pouco mais para baixo */
-    left: 80%;
-    transform: translateX(-50%);
+  .switch {
+    display: block;
+    background-color: black;
     width: 80px;
     height: 80px;
-    border: 5px solid green;
-    font-size: 1em;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2), 0 0 1px 2px black,
+      inset 0 2px 2px -2px white, inset 0 0 2px 15px #47434c,
+      inset 0 0 2px 22px black;
+    border-radius: 5px;
+    padding: 20px;
+    perspective: 700px;
+    position: fixed;
+    bottom: 50px;
+    left: 80%;
+    transform: translateX(-50%);
+    z-index: 3;
     cursor: pointer;
-    z-index: 3; /* Colocado acima do universo */
-    background-image: url('https://i.im.ge/2024/05/08/ZKzokD.1000042826.gif'); /* Adiciona imagem de fundo */
-    background-size: cover; /* Assegura que a imagem cubra completamente o botão */
-    background-position: center; /* Centraliza a imagem no botão */
   }
 
-  /* Animação de código digitado */
-  .codigo {
-    animation: type 3s steps(40, end);
-    white-space: nowrap;
-    overflow: hidden;
-    border-right:.15em solid #0f0; /* Efeito de cursor verde */
+  .switch input {
+    display: none;
   }
 
-  @keyframes type {
-    from { width: 0; }
+  .switch input + .button {
+    transform-origin: center center -20px;
+    transform: translateZ(20px) rotateX(-25deg);
+    transform-style: preserve-3d;
+    background-color: #03a614;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient(
+      #02961d 0%,
+      #005e02 30%,
+      #006300 70%,
+      #009100 100%
+    );
+    background-repeat: no-repeat;
+  }
+
+  .switch input:checked + .button {
+    transform: translateZ(20px) rotateX(25deg);
+    box-shadow: 0 -10px 20px #1cff42;
+  }
+
+  .switch .button::before {
+    content: "";
+    background: linear-gradient(
+          rgba(255, 255, 255, 0.8) 10%,
+          rgba(255, 255, 255, 0.3) 30%,
+          #055c00 75%,
+          #022e00
+        )
+        50% 50%/97% 97%,
+      #00b00f;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50px;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    position: absolute;
+    top: 0;
+  }
+
+  .switch .button::after {
+    content: "";
+    background-image: linear-gradient(#006600, #003008);
+    width: 100%;
+    height: 50px;
+    transform-origin: top;
+    transform: translateY(50px) rotateX(-90deg);
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 50px 8px 0px black, 0 80px 20px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .switch .light {
+    opacity: 0;
+    animation: light-off 1s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#7dff83, #1bff17 40%, transparent 70%);
+  }
+
+  .switch .dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(transparent 30%, rgba(6, 97, 0, 0.7) 70%);
+    background-size: 10px 10px;
+  }
+
+  .switch .characters {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(white, white) 50% 20%/5% 20%,
+      radial-gradient(
+          circle,
+          transparent 50%,
+          white 52%,
+          white 70%,
+          transparent 72%
+        )
+        50% 80%/33% 25%;
+    background-repeat: no-repeat;
+  }
+
+  .switch .shine {
+    transition: all 0.3s cubic-bezier(1, 0, 1, 1);
+    opacity: 0.3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(white, transparent 3%) 50% 50%/97% 97%,
+      linear-gradient(
+          rgba(255, 255, 255, 0.5),
+          transparent 50%,
+          transparent 80%,
+          rgba(255, 255, 255, 0.5)
+        )
+        50% 50%/97% 97%;
+    background-repeat: no-repeat;
+  }
+
+  .switch .shadow {
+    transition: all 0.3s cubic-bezier(1, 0, 1, 1);
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 70%, rgba(0, 0, 0, 0.8));
+    background-repeat: no-repeat;
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+
+    80% {
+      opacity: 0.8;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes light-off {
+    0% {
+      opacity: 1;
+    }
+
+    80% {
+      opacity: 0;
+    }
   }
 
   /* Estilo da imagem na aba */
@@ -149,10 +282,18 @@
   <img class="imagem-aba" src="https://i.im.ge/2024/05/06/ZRWoyK.1000042235.jpeg"  alt="imagem na aba" onclick="openPDF('https://drive.google.com/file/d/1YnsuBzUPZwbNgYFIS1YU08lHUT_XLIpJ/view?usp=drivesdk', 'Ben 10 O Segredo Do Omnitrix PDF')">
   
   <img class="imagem-aba" src="https://i.im.ge/2024/05/06/ZRZOSL.1000042237.jpeg"  alt="imagem na aba" onclick="openPDF('https://drive.google.com/file/d/1u5yzYkKw6l1hUI0R-NNQBlhCwyJyGJW2/view?usp=drivesdk', 'Ben 10 E Mutante Rex - Heróis Unidos PDF')">
-
 </div>
 
-<button id="open-pdf-btn" onclick="toggleSidebar()"></button> <!-- Botão com a imagem de fundo -->
+<label class="switch">
+  <input type="checkbox" />
+  <div class="button" onclick="toggleSidebar()">
+    <div class="light"></div>
+    <div class="dots"></div>
+    <div class="shadow"></div>
+    <div class="characters"></div>
+    <div class="shine"></div>
+  </div>
+</label>
 
 <script>
   // Função para abrir ou fechar a aba lateral
@@ -167,6 +308,11 @@
   }
 
 </script>
+<body>
+ 
+  <div id="Willer" style="position: fixed; bottom: 10px; right: 10px; color: white; font-size: 16px;">
+    Willer
+  </div>
 
 </body>
 </html>

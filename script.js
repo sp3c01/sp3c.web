@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             preloader.style.display = "none";
             content.style.display = "block";
-        }, 1000); // Pequeno intervalo de espera para dar tempo de a tela de carregamento ser vista
+        }, 1500); // Pequeno intervalo de espera para dar tempo de a tela de carregamento ser vista
     });
 
     // Seleciona o campo de entrada da barra de pesquisa

@@ -22,6 +22,30 @@ h1 {
     text-shadow: 2px 2px 4px #000000; /* sombra do texto para um efeito antigo */
 }
 
+/* Estilos gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace; /* fonte antiga */
+    background-color: #2d2d2d; /* fundo escuro */
+    color: #f5f5dc; /* cor de texto antiga */
+}
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: #2d2d2d; /* cor cinza */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para o título no cabeçalho */
+h1 {
+    margin: 0;
+    font-size: 32px; /* tamanho da fonte aumentado */
+    color: #f5f5dc; /* cor de texto antiga */
+    text-shadow: 2px 2px 4px #000000; /* sombra do texto para um efeito antigo */
+}
+
 /* Estilos para o formulário de pesquisa */
 header form {
     margin-top: 20px;
@@ -39,6 +63,101 @@ header input[type="text"] {
     font-family: 'Courier New', Courier, monospace; /* fonte antiga */
     font-size: 16px;
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para o botão de pesquisa */
+header button {
+    padding: 10px 20px;
+    background-color: #8b0000; /* cor do botão antiga */
+    color: #ffffff;
+    border: 2px solid #8b0000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Courier New', Courier, monospace; /* fonte antiga */
+    font-size: 16px;
+    margin-left: 10px; /* espaço entre o campo de pesquisa e o botão */
+}
+
+/* Estilos para o botão de pesquisa em hover */
+header button:hover {
+    background-color: #b22222;
+}
+
+/* Estilos para a seção de resultados */
+main .results {
+    padding: 20px;
+    background-color: #2d2d2d; /* cor de fundo */
+}
+
+/* Estilos para a seção de links */
+.links {
+    background-color: #2d2d2d; /* cor cinza */
+    padding: 20px;
+}
+
+/* Estilos para cada categoria de link */
+.link-category {
+    margin-bottom: 20px;
+}
+
+/* Estilos para o título de categoria de link */
+.link-category h2 {
+    color: #f5f5dc; /* cor de texto antiga */
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px #000000; /* sombra do texto para um efeito antigo */
+}
+
+/* Estilos para os links */
+.link-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.link-category ul li {
+    margin-bottom: 5px;
+}
+
+.link-category ul li a {
+    color: #ffd700; /* cor do link */
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace; /* fonte antiga */
+}
+
+.link-category ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para o texto das listas */
+.link-category ul li h3 {
+    font-family: 'Courier New', Courier, monospace; /* fonte antiga */
+    color: #f5f5dc; /* cor de texto antiga */
+}
+/* Estilos para a tela de carregamento */
+#preloader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    z-index: 1000;
+}
+
+.preloader-icon {
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-bottom: 20px;
+}
+.gif-section {
+    display: flex;
+    justify-content: space-between; /* Para distribuir os gifs igualmente */
+    margin-top: 0px; /* Ou qualquer margem desejada */
 }
 
 /* Estilos para o botão de pesquisa */

@@ -4,45 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload de Arquivos</title>
+    <style>
+        body {
+            background-color: black;
+            color: black; 
+        }
+    </style>
 </head>
 <body>
     <h1>Upload</h1>
-    <form id="upload-form">
+    <form id="upload-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
         <input type="file" id="file-input" accept=".html">
         <button type="submit">Enviar</button>
     </form>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const uploadForm = document.getElementById("upload-form");
-
-            uploadForm.addEventListener("submit", function(event) {
-                event.preventDefault();
-                const fileInput = document.getElementById("file-input");
-                const file = fileInput.files[0];
-                
-                if (file) {
-                    const formData = new FormData();
-                    formData.append("file", file);
-
-                    fetch("upload.php", {
-                        method: "POST",
-                        body: formData
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        alert(data); // Exibe mensagem de sucesso ou erro
-                        window.location.href = "index.html"; // Redireciona para a página principal
-                    })
-                    .catch(error => {
-                        console.error("Erro:", error);
-                        alert("Erro ao enviar o arquivo. Tente novamente.");
-                    });
-                } else {
-                    alert("Por favor, selecione um arquivo.");
-                }
-            });
-        });
-    </script>
+    <?php
+    // Verifica se o arquivo foi enviado corretamente
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
+            // Diretório onde os arquivos serão armazenados
+            $uploadDir = 'uploads/';
+            
+            // Nome do arquivo enviado
+            $fileName = basename($_FILES['file']['name']);
+            
+            // Caminho completo do arquivo no servidor
+            $filePath = $uploadDir . $fileName;
+            
+            // Move o arquivo do diretório temporário para o diretório de uploads
+            if (move_uploaded_file($_FILES['file']['tmp_name'], $filePath)) {
+                echo "<p>Arquivo enviado com sucesso.</p>";
+            } else {
+                echo "<p>Erro ao enviar o arquivo.</p>";
+            }
+        } else {
+            echo "<p>Erro ao processar o upload do arquivo.</p>";
+        }
+    }
+    ?>
 </body>
 </html>

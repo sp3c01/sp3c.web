@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Arquivos</title>
+</head>
+<body>
+    <h1>Upload</h1>
+    <form id="upload-form">
+        <input type="file" id="file-input" accept=".html">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const uploadForm = document.getElementById("upload-form");
+
+            uploadForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                const fileInput = document.getElementById("file-input");
+                const file = fileInput.files[0];
+                
+                if (file) {
+                    const formData = new FormData();
+                    formData.append("file", file);
+
+                    fetch("upload.php", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        alert(data); // Exibe mensagem de sucesso ou erro
+                        window.location.href = "index.html"; // Redireciona para a página principal
+                    })
+                    .catch(error => {
+                        console.error("Erro:", error);
+                        alert("Erro ao enviar o arquivo. Tente novamente.");
+                    });
+                } else {
+                    alert("Por favor, selecione um arquivo.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

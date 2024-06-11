@@ -1,15 +1,13 @@
-/* Estilos gerais */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace; /* fonte antiga */
-    background-color: #2d2d2d; /* fundo escuro */
-    color: #f5f5dc; /* cor de texto antiga */
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2d2d2d;
+    color: #f5f5dc;
 }
 
-/* Estilos para o cabeçalho */
 header {
-    background-color: #2d2d2d; /* cor cinza */
+    background-color: #2d2d2d;
     padding: 20px;
     text-align: center;
 }

@@ -3,13 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload de Arquivos</title>
+    <title>Acesso Negado</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .message-container {
+            text-align: center;
+        }
+        .error-code {
+            font-size: 10rem;
+            margin: 0;
+        }
+        .error-message {
+            font-size: 2rem;
+            margin: 0;
+        }
+        .server-info {
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Upload</h1>
-    <form id="upload-form" action="uploads.php" method="post" enctype="multipart/form-data">
-        <input type="file" id="file-input" accept=".html">
-        <button type="submit">Enviar</button>
-    </form>
+    <div class="message-container">
+        <p class="error-code">403</p>
+        <p class="error-message">Acesso Negado</p>
+        <p class="server-info">Você não tem permissão para acessar este recurso.</p>
+    </div>
 </body>
 </html>

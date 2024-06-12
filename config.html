@@ -3,70 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Administração</title>
+    <title>Acesso Negado</title>
     <style>
         body {
-            font-family: 'Times New Roman', Times, serif;
-            background-color: #fafafa;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            color: #333;
+        }
+        .message-container {
             text-align: center;
         }
-        h1 {
-            font-size: 32px;
-            margin-top: 50px;
+        .error-code {
+            font-size: 10rem;
+            margin: 0;
         }
-        form {
+        .error-message {
+            font-size: 2rem;
+            margin: 0;
+        }
+        .server-info {
+            font-size: 1rem;
             margin-top: 20px;
-        }
-        input[type="text"],
-        input[type="password"],
-        button {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 18px;
-            padding: 10px;
-            margin: 10px;
-            border: 1px solid #666;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #555;
         }
     </style>
 </head>
 <body>
-    <h1>Painel</h1>
-    <form id="login-form">
-        <input type="text" id="username" name="username" placeholder="Usuário" required>
-        <br>
-        <input type="password" id="password" name="password" placeholder="Senha" required>
-        <br>
-        <button type="submit">Login</button>
-    </form>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const loginForm = document.getElementById("login-form");
-
-            loginForm.addEventListener("submit", function(event) {
-                event.preventDefault();
-                const username = loginForm.elements["username"].value;
-                const password = loginForm.elements["password"].value;
-
-                if (username === "f22ef35b753084c0bb97e5344a49fafcㅤ" && password === "2c64ce3f668887384616d0c28dd56efa") {
-                    window.location.href = "new.php"; // Redireciona para a página de upload
-                } else {
-                    alert("Credenciais inválidas. Tente novamente.");
-                }
-            });
-        });
-    </script>
+    <div class="message-container">
+        <p class="error-code">403</p>
+        <p class="error-message">Acesso Negado</p>
+        <p class="server-info">Você não tem permissão para acessar este recurso.</p>
+    </div>
 </body>
 </html>

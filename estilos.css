@@ -1,0 +1,132 @@
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+    background: url('https://i.im.ge/2024/08/03/fTmgCL.1000303559.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.redirect-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; 
+}
+
+.redirect-button img {
+    width: 30px; 
+    height: auto;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+}
+
+.banner {
+    width: 150px; 
+    height: auto;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; 
+}
+
+.site-name {
+    font-size: 18px; 
+    color: #fff;
+    margin-right: 10px;
+}
+
+.verified-icon {
+    width: 30px;
+    height: auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.folders {
+    display: flex;
+    justify-content: space-between; 
+    margin: 100px; 
+    padding: 0 10px;
+    width: 70%; 
+    max-width: 800px; 
+}
+
+.folder {
+    text-align: center;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.folder img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s;
+}
+
+.folder:hover img {
+    transform: scale(1.1);
+}
+
+#links-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.links {
+    padding: 20px;
+    margin: 20px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent; 
+}
+
+.links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.links li {
+    margin: 5px 0;
+}
+
+.links a {
+    color: #fff; 
+    text-decoration: none;
+    display: block; 
+    padding: 5px 0;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}

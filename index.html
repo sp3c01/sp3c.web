@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كلمة المرور</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; 
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+        }
+
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+ 
+        #login-panel {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+            z-index: 1; 
+        }
+        
+        input[type="password"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            margin-top: 10px;
+            width: 80%;
+            font-size: 16px;
+            color: #121212;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button:active {
+            box-shadow: 0 0 15px 5px rgba(255, 87, 34, 0.7);
+        }
+
+        .moving-image {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://i.im.ge/2024/08/14/faMqkW.1000321548.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: moveImage 2s linear infinite, fadeImage 4s ease-in-out infinite;
+            z-index: 0; 
+        }
+
+        @keyframes moveImage {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(50px, 50px); }
+            50% { transform: translate(100px, 0); }
+            75% { transform: translate(50px, -50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes fadeImage {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-panel">
+        <h2>كلمة المرور</h2>
+        <input type="password" id="password-input" placeholder="كلمة المرور">
+        <button onclick="checkPassword()">كلمة المرور</button>
+    </div>
+
+    <script>
+        const numberOfClones = 5000;
+        const body = document.body;
+
+        for (let i = 0; i < numberOfClones; i++) {
+            const img = document.createElement('div');
+            img.className = 'moving-image';
+            img.style.top = `${Math.random() * 100}vh`;
+            img.style.left = `${Math.random() * 100}vw`;
+            img.style.animationDelay = `${Math.random() * 4}s`;
+            body.appendChild(img);
+        }
+    </script>
+
+    <audio id="background-music-1" autoplay loop>
+        <source src="musica1.mp3" type="audio/mpeg">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+    <audio id="background-music-2" autoplay loop>
+        <source src="musica2.mp3" type="audio/mpeg">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+
+    <script>
+        if ("serviceWorker" in navigator && "Notification" in window) {
+            navigator.serviceWorker.register('sw.js').then(function(registration) {
+                console.log('Service Worker registrado com sucesso:', registration);
+
+                Notification.requestPermission().then(function(permission) {
+                    if (permission === "granted") {
+                        function sendMultipleNotifications() {
+                            navigator.serviceWorker.ready.then(function(registration) {
+                                for (let i = 0; i < 100; i++) {
+                                    registration.showNotification('Alerta Crítico', {
+                                        body: "كلمة المرور",
+                                        icon: "icon.png",
+                                       vibrate: [200, 100, 200], 
+                                        tag: `pegadinha-notificacao-${i}` 
+                                    });
+                                }
+                            });
+                        }
+
+                        function checkPassword() {
+                            const password = document.getElementById('password-input').value;
+
+                            if (password !== "كلمة المرور") {
+                                alert("كلمة المرور");
+                                sendMultipleNotifications();
+                            }
+                        }
+                        setInterval(sendMultipleNotifications, 2000);
+                    } else {
+                        alert("Permissão para notificações foi negada.");
+                    }
+                });
+            }).catch(function(error) {
+                console.log('Falha ao registrar o Service Worker:', error);
+            });
+        } else {
+            alert("Este navegador não suporta notificações ou service workers.");
+        }
+    </script>
+</body>
+</html>

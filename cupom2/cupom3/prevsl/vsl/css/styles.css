@@ -1,0 +1,1125 @@
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('images/background_whats.jpg'); /* Caminho da sua imagem de fundo */
+}
+
+/* Menu de cima */
+
+.menu {
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  height: 70px; /* Ajuste a altura desejada */
+  background: linear-gradient(180deg, #f0f4f8, #fff);
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
+  z-index: 9998; /* Para garantir que o menu fique acima de outros elementos */
+  border-radius: 0px 0px 20px 20px; /* Top-left, top-right, bottom-right, bottom-left */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #f0f4f8, #fff);
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.menu a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.menu a img {
+  max-width: 100%; /* Ajuste o tamanho mÃ¡ximo da imagem */
+  max-height: 100%; /* Ajuste o tamanho mÃ¡ximo da imagem */
+  display: block;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.valor-box {
+  width: 130px;
+  height: 25px;
+  background-color: #FFDF00;
+
+  border-radius: 12px;
+  padding: 10px;
+  align-items: center;
+  line-height: 25px;
+  display: block;
+  margin: 0 auto;
+}
+
+.valor-box-saque {
+  width: 99%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  align-items: center;
+  line-height: 20px;
+  display: block;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+
+.valor-box span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#valor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+#valor-saque {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+#valor-money {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+/* Menu de baixo */
+
+.menuemb {
+  position: fixed;
+  bottom: 1%;
+  width: 95%;
+  left: 2.5%;
+  right: 2.5%;
+  background: linear-gradient(180deg, #fff, #fff);
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  z-index: 9995;
+}
+
+
+.menuemb a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  height: 50px;
+}
+
+.menuemb a img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+/* BOTÃ•ES LIKE E DISLIKE*/
+.like-dislike-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+}
+
+.like-button, .dislike-button {
+  border: 2px solid;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  text-align: center; /* Centraliza o texto */
+  margin: 0 auto;
+  right: 5%;
+  left: 5%;
+}
+
+.like-button {
+  border-color: green;
+  color: green;
+  width: 49%;
+  right: 5%;
+  left: 5%;
+  border-radius: 8px;
+}
+
+.dislike-button {
+  border-color: red;
+  color: red;
+  width: 49%;
+  right: 5%;
+  left: 5%;
+  border-radius: 8px;
+}
+
+.liked {
+  background: linear-gradient(180deg, green, green);
+  color: #fff;
+}
+
+.disliked {
+  background: linear-gradient(180deg, red, red);
+  color: #fff;
+}
+
+
+
+.button-container {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+}
+
+.square-button {
+  border-radius: 12px;
+  border: none;
+  aspect-ratio: 1 / 1;
+  margin: 5px;
+  background-color: #fff;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.square-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Redimensiona a imagem para preencher o botÃ£o */
+}
+
+.square-button.active {
+  background-color: #FFDF00;
+
+  transform: scale(1.1);
+}
+
+.input-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  margin: 0 auto;
+}
+
+.input-container input[type="text"] {
+  width: 100%;
+  font-size: 15px;
+  color: #303030;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  margin: 0 auto;
+}
+
+/* POPUP SAQUE */
+
+.popup-container {
+  position: fixed;
+  border-radius: 15px;
+  top: 50%;
+  left: 50%;
+  width: 90%;   
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 100);
+  display: none;
+  z-index: 10000;
+}
+
+.popup-container2 {
+  display: none;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #292929;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 9997;
+  opacity: 100%;
+  color: white;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 100);
+}
+
+
+
+.popup-text {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+
+.popup-button {
+  background-color: #FF0000;
+  width: 95%;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.desbloquear-button {
+  background-color: #FFDF00;
+
+  width: 90%;
+  border-radius: 8px;
+  color: #000000;
+  border: none;
+  height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* POPUP LIMITE DE SAQUE */
+
+.popup-containerL {
+  position: fixed;
+  border-radius: 15px;
+  top: 50%;
+  left: 50%;
+  width: 90%;   
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  box-shadow: 0 0 350px rgba(0, 0, 0, 1);
+  display: none;
+  z-index: 10000;
+}
+
+.popup-textL {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+
+.popup-buttonL {
+  background-color: #FF0000;
+  width: 95%;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.desbloquear-buttonL {
+  background: linear-gradient(135deg, #28a745, #06641c);
+  width: 95%;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Style dos Ã­cones do Google */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 30;
+}
+
+/* Barra de carregamento */
+
+#progress-bar {
+    width: 95%;
+    height: 20px;
+    background-color: #ddd;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+    
+#progress-bar div {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #ff0000;
+    animation: progress 86400s linear; /* ajustar segundos */
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+    
+@keyframes progress {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+
+/* Caixa de login */
+
+.loginbox {
+  width: 90%; /* Largura do retÃ¢ngulo */
+  height: 250px; /* Altura do retÃ¢ngulo */
+  background-color: #d9d9d9; /* Cor de fundo do retÃ¢ngulo */
+  border-radius: 20px; /* Raio dos cantos do retÃ¢ngulo */
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  
+}
+
+.input-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.input-container label {
+
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px; /* EspaÃ§amento entre o tÃ­tulo e a caixa */
+}
+
+.input-container input[type="text"] {
+  width: 96%;
+  font-size: 15px;
+  color: #007bff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilo para a bolinha girando */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #28a745;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  vertical-align: middle;
+}
+
+.prosseguir-button {
+  background-color: #4285F4;
+  width: 90%;
+  border-radius: 12px;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.prosseguir-button1 {
+  background: linear-gradient(135deg, #28a745, #06641c);
+  width: 90%;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+
+.criar-conta {
+  background-color: #fff;
+  width: 90%;
+  border-radius: 8px;
+  color: rgb(101, 101, 101);
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+/* NotificaÃ§Ã£o de dinheiro */
+
+.notificacaoDinheiro {
+    display: none;
+    margin: 0 auto;
+    position: fixed;
+    top: -100px; /* Posiciona a notificaÃ§Ã£o acima da tela */
+    left: 0;
+    right: 0;
+    color: #333;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(125deg, #5575FD, #2B50F0);
+    z-index: 9999;
+    height: 50px;
+    width: 60%;
+    border-radius: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+    
+.notificacaoDinheiro.activeDinheiro {
+    display: block;
+    animation: slideInDinheiro 0.5s forwards;
+}
+    
+.notificacaoDinheiro.activeDinheiro.slideOutDinheiro {
+    animation: slideOutDinheiro 0.5s forwards;
+}
+    
+@keyframes slideInDinheiro {
+    from {
+        top: -100px;
+    }
+    to {
+        top: 0;
+    }
+}
+    
+@keyframes slideOutDinheiro {
+    from {
+        top: 0;
+    }
+    to {
+        top: -100px;
+    }
+}
+
+/* Slogan inicio */
+
+.slogan-inicio {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center; 
+    align-items: center;
+    background-color: #7a7a7a;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    width: 95%;
+    border-radius: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.outer-box {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.outer-box-login {
+
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+
+  border-radius: 10;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.center-wrapper {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh; /* Ajuste conforme necessÃ¡rio para ocupar toda a altura da tela */
+}
+
+.white-box {
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 100%;
+    width: 99%;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 22px;
+}
+
+.imagem {
+  display: block;
+  margin: 0 auto;
+  background-color: #fff;
+  height: 100%;
+  width: 90%;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+.white-box-login {
+  display: block;
+  margin: 0 auto;
+  background-color: #fff;
+  height: 100%;
+  width: 99%;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 22px;
+}
+
+.footer-text {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff; /* Cor do texto */
+  padding: 10px; /* EspaÃ§amento interno do texto */
+  box-sizing: border-box; /* Evita que o padding afete a largura total */
+  padding-bottom: 20px;
+}
+
+
+
+.wbc {
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.gerarCodigo {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #28a745, #28a745);
+    border: 0;
+    color: white;
+    border-radius: 8px;
+    width: 50%;
+    height: 30px;
+    line-height: 27px;
+    font-size: 16px;
+}
+
+.gerarCodigo2 {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #28a745, #28a745);
+  border: 0;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  width: 85%;
+  height: 35px;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+
+
+.centro {
+  background-color: white;
+  height: 100%;
+  width: 95%;
+  left: 2.5%;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}   
+
+.form-label,
+.form-input {
+  border-radius: 12px;
+  width: 90%;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  box-sizing: border-box; /* Adicionado para incluir borda e preenchimento nas dimensÃµes */
+  text-align: center;
+  font-size: 16px;
+}
+
+.form-input {
+  border: 1px solid #202020;
+  height: 40px;
+  line-height: 40px;
+}
+
+.form-label {
+  height: 35px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(99, 99, 99);
+  line-height: 35px;
+  margin-bottom: 15px;
+}
+
+
+#container-progresso {
+  position: relative;
+  width: 200px; /* Ajuste para o tamanho desejado */
+  height: 100px; /* Ajuste para o tamanho desejado */
+  text-align: center;
+}
+
+#barra-progresso-svg {
+  width: 100%;
+  height: 100%; 
+}
+
+#minha-barra-progresso {
+  stroke-linecap: round; /* Pontas redondas */
+  stroke-dasharray: 0 100; /* ComeÃ§a vazia */
+  animation: preencherAnimacao 2.5s linear forwards; /* AnimaÃ§Ã£o de preenchimento em 5 segundos */
+}
+
+@keyframes preencherAnimacao {
+  100% {
+    stroke-dasharray: 100 1; /* Termina preenchida */
+  }
+}
+
+#texto-progresso {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #28a745; /* Cor do texto */
+}
+
+#meu-valor-progresso {
+  display: block;
+  font-size: 1.2em; /* Ajuste para o tamanho desejado */
+  font-weight: bold;
+}
+
+
+
+.faq-container {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+  border: 1px solid #f0f4f8;
+  border-radius: 12px;
+}
+
+.question {
+  padding: 16px;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(101, 101, 101);
+  font-weight: bold;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.answer {
+  padding: 16px;
+  display: none;
+  background-color: #FFDF00;
+  color: white;
+}
+.answer.active {
+  display: block;
+  border-radius: 8px;
+}
+
+.faq-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #FFDF00;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Adicionado estilo para ícone ativo */
+.rate input[type="radio"]:checked + .face {
+  opacity: 1;
+  background-color: #007bff/* Cor desejada para ícone ativo */;
+  color: #007bff/* Cor do ícone ativo */;
+}
+
+
+.stars {
+  display: grid;
+  grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+	width: fit-content;
+	margin: 0 auto;
+	cursor: pointer;
+  color: #222222;
+  margin-bottom: -20px;
+}
+.star {
+	color: #FFD700 !important;
+}
+.rate {
+	height: 50px;
+	margin-left: -5px;
+	padding: 5px;
+	font-size: 32px;
+	position: relative;
+	cursor: pointer;
+}
+.rate input[type="radio"] {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,0%);
+	pointer-events: none;
+}
+.star-over::after {
+	font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+	font-size: 16px;
+	content: "\f005";
+	display: inline-block;
+	color: #d3dcff;
+	z-index: 1;
+	position: absolute;
+	top: 17px;
+	left: 10px;
+}
+
+
+.face {
+	opacity: 0;
+	position: absolute;
+
+	background: #FFD700;
+	border-radius: 5px;
+	top: -50px;
+	left: 2px;
+	transition: 0.2s;
+	pointer-events: none;
+}
+
+
+.rate:hover .face {
+	opacity: 1;
+}
+
+/* Not sure if I like this or not. */
+/* Makes the emoji stay displayed */
+/* input[type="radio"]:checked + .face {
+	opacity: 1 !important;
+} */
+
+
+
+
+
+
+
+
+
+.rating-container {
+  display: flex;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.rating-button {
+  background-color: rgb(226, 226, 226); /* Cor cinza inicial */
+  border: none;
+  width: 95%;
+  height: 40px;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* TransiÃ§Ã£o suave na mudanÃ§a de cor */
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(101, 101, 101);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rating-button.active {
+  background-color: #FFDF00; /* Cor verde quando clicado */
+  color: white;
+}
+
+.pergunta-whats {
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(101, 101, 101);
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+
+.enviarCodigo {
+  background-color: #FFDF00;
+
+  width: 93%;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin: 0px auto;
+  box-sizing: border-box;
+  margin-top: 15px;
+}
+
+.card__satisfacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__satisfacao h2,
+.card__resposta h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.card__gradeContainer {
+  display: grid;
+  width: 90%;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.card__grade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: all ease 0.3s;
+}
+
+.card__grade i {
+  font-size: 32px;
+  color: #7e7e7e;
+}
+
+.card__gradeDescricao {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+margin-bottom: -20px;
+  color: #7e7e7e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card__gradeeContainer {
+  display: grid;
+  width: 90%;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+
+.card__gradee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: all ease 0.3s;
+}
+
+.card__gradee i {
+  font-size: 32px;
+  color: #7e7e7e;
+}
+
+.card__gradeeDescricao {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 5px 0px 0px 0px;
+  color: #7e7e7e;
+}
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ .starrating > input {display: none;}  /* Remove radio buttons */
+ 
+ .starrating > label:before { 
+   content: "\f005"; /* Star */
+   margin: 2px;
+   font-size: 8em;
+   font-family: FontAwesome;
+   display: inline-block; 
+ }
+ 
+ .starrating > label
+ {
+   color: #222222; /* Start color when not clicked */
+ }
+ 
+ .starrating > input:checked ~ label
+ { color: #ffca08 ; } /* Set yellow color when star checked */
+ 
+ .starrating > input:hover ~ label
+ { color: #ffca08 ;  } /* Set yellow color when star hover */
+ 
+ 

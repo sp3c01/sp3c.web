@@ -136,27 +136,6 @@
         <script src="js/funcoes.js"></script>
         <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool" url="https://google.com.br"></script>
         <script>
-            // BACK REDIRECT
-            var urlBackRedirect = 'cupom2/index.html'; // lembre-se de usar a url sem espaços
-            // não altere nada abaixo dessa linha
-            urlBackRedirect = urlBackRedirect = urlBackRedirect.trim() +
-            (urlBackRedirect.indexOf("?") > 0 ? '&' : '?') +
-            document.location.search.replace('?', '').toString();
-            history.pushState({}, "", location.href);
-            history.pushState({}, "", location.href);
-            window.onpopstate = function () {
-                setTimeout(function () {
-                    location.href = urlBackRedirect;
-                }, 1);
-            };
-            // BACK REDIRECT
-
-
-            // MÁSCARA INPUT
-            jQuery(function($){
-                $("#codigoBarrasDigitado").mask("99     99     99     99");
-            });
-            // MÁSCARA INPUT
         </script>   
     
 </body></html>

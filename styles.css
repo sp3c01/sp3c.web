@@ -30,11 +30,19 @@ header {
 
 #search-box {
     width: 300px;
-    padding: 8px; /* Reduz o padding para a barra de pesquisa mais fina */
-    border: 1px solid #ccc;
+    padding: 6px; /* Reduz o padding para a barra de pesquisa mais fina */
+    border: 1px solid #ccc; /* Linha cinza fina ao redor da barra de pesquisa */
     border-radius: 3px;
     margin-bottom: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px; /* Ajusta o tamanho da fonte na barra de pesquisa */
+    outline: none; /* Remove o contorno padrão ao focar na barra */
+    transition: border-color 0.3s ease; /* Adiciona transição suave para a cor da borda */
+}
+
+#search-box:focus {
+    border-color: #000; /* Linha preta fina ao clicar */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Mantém a sombra leve ao clicar */
 }
 
 button {

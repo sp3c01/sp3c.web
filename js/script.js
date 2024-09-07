@@ -28,7 +28,15 @@ const links = [
     { name: 'A Fuga do Planeta Terra', url: 'https://デ-ン-ッ-ク-ス-ン-デ-ド-ド-ル-ボ-ラ-ルグレフト-ブムフクトプドラア.ジ-1l1-グ.ッ-22-ク-11-ス-33-ル-99-プ-75-ゾ--エ--ブ--ス-ッ.ク.ス.ズ.ク.ジ.シグナルパブリコ-公共の識標-バレウドットグウクトットズヒ.セール/player3/download.api?download=NVNtelU0S0NBUWNDVkNNTzR4Rld3d0g0Z3M5bEJpT3Rkdy90Znd6bjk5OENvMVFZdEJvbHdLQkliZDJDVnBtTEEwWkRPc0kyU2xrL1NIWEtTdlVKSzNaNFhidWlhR25qd1Q2UkZROHA0UzdEa1kyeW5pTmp5V2IyMFdQQmNENHpxUThEaE8yKzRmV3NSU0ZOSlI1Q051bm5jRXNmYkRtTmN1Z3FBa1RmZFZXSHVnPT0=' },
     { name: 'Guerra Civil', url: 'https://デ-ン-ッ-ク-ス-ン-デ-ド-ド-ル-ボ-ラ-ルグレフト-ブムフクトプドラア.ジ-1l1-グ.ッ-22-ク-11-ス-33-ル-99-プ-75-ゾ--エ--ブ--ス-ッ.ク.ス.ズ.ク.ジ.シグナルパブリコ-公共の識標-バレウドットグウクトットズヒ.セール/player3/download.api?download=NVNtelU0S0NBUWNDVkNNTzR4Rld3d0g0Z3M5bEJpT3Rkdy90Znd6bjk5OENvMUlib1JvaXhxQW9WUC8zUjVxT0JBTnNIcEoxUTB0dk5sLytNOE5XYlFzN1ZiMmhZMmpnd0NycGMzRTkraVhKc0lpNWowOFk3RWJkejJPVmNqTVQzWG90bU42Yjk0bUpSQUZLZnd4RUU5cm5OanNBWW43bUVKdz0=' },
     { name: 'Godzilla e Kong: O Novo Império', url: 'https://デ-ン-ッ-ク-ス-ン-デ-ド-ド-ル-ボ-ラ-ルグレフト-ブムフクトプドラア.ジ-1l1-グ.ッ-22-ク-11-ス-33-ル-99-プ-75-ゾ--エ--ブ--ス-ッ.ク.ス.ズ.ク.ジ.シグナルパブリコ-公共の識標-バレウドットグウクトットズヒ.セール/player3/download.api?download=NVNtelU0S0NBUWNDVkNNTzR4Rld3d0g0Z3M5bEJpT3Rkdy90Znd6bjk5OENvMUlhcVJjZzFhZElmc0NOTHJ1eWVpbC9CcjVpWm5ob1RsUDhTc2dxRFY4d0tNbW1IVDZqdjNhZEV3QTJ1bUN6NG92WTRpczY4WGJUd2lTRk56OXAzUmtTa2RLc3RaM1BHd1JpSFNWZkVkcmFSejR3VkI2U1ZhOXBOQ2YrY1JIa3Zac1ZNWjg9' },
-    
+    { name: 'A_metralhadora_22_armas_caseiras_para_defesa_e_resistência.pdf', url: 'https://drive.google.com/file/d/17W06RbSm90f8zMeGeUDsQh2pQW5PtcqG/view?usp=drivesdk' },
+    { name: 'ARMAS E MUNIÇÕES CASEIRAS.pdf', url: 'https://drive.google.com/file/d/1Owhifx9UreUmkjWKlRR86sZeqNHcKzAT/view?usp=drivesdk' },
+    { name: 'Fabricação de Armas Caseiras - Pistola.pdf', url: 'https://drive.google.com/file/d/19UPnbJxJbDB18NNhK6kadyZ3S_WmkAO7/view?usp=drivesdk' },
+    { name: 'Fabricação de Armas Caseiras - Submetralhadora.pdf', url: 'https://drive.google.com/file/d/1g-myP2X_VZut6pXrFMSxf1GhXWFNKSmZ/view?usp=drivesdk' },
+    { name: 'Manuseio Seguro de Armas de Fogo.pdf', url: 'https://drive.google.com/file/d/1bOIp-edok-w-vNBp385jsHYKh2Vnu8zC/view?usp=drivesdk' },
+    { name: 'Treinamento_de_arma_de_fogo_exercícios_práticos_para_tiro_defensivo.pdf', url: 'https://drive.google.com/file/d/138WnR1Qh8eAledQCfGcvzW-SFhH3DiPV/view?usp=drivesdk' },
+
+
+
 
 
 ];

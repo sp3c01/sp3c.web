@@ -8,7 +8,7 @@
     "start": "node index.js"
   },
   "palavras-chave": [],
-  "autor": "Seu Nome",
+  "autor": "mrx",
   "licença": "ISC",
   "dependências": {
     "express": "^4.17.1",
@@ -16,6 +16,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:seu-usuario/meu-projeto-server.git"
+    "url": "https://earthy-childish-wolfsbane.glitch.me/"
   }
 }

@@ -1,1 +1,21 @@
 
+{
+  "nome": "meu-projeto",
+  "versão": "1.0.0",
+  "descrição": "Meu projeto Node.js com Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "palavras-chave": [],
+  "autor": "Seu Nome",
+  "licença": "ISC",
+  "dependências": {
+    "express": "^4.17.1",
+    "winston": "^3.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:seu-usuario/meu-projeto-server.git"
+  }
+}

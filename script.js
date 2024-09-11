@@ -8,7 +8,7 @@ searchBtn.addEventListener('click', async () => {
     const searchTerm = searchInput.value.trim();
     if (searchTerm) {
         try {
-            const response = await fetch(`https://9dec6e04-153e-4f39-899a-08feef5db582-00-192ntprp6e48y.riker.replit.dev/search?q=${searchTerm}`);
+            const response = await fetch(`https://earthy-childish-wolfsbane.glitch.me/search?q=${searchTerm}`);
             const data = await response.json();
             displaySearchResults(data);
         } catch (error) {

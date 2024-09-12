@@ -17,7 +17,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
             if (data.results.length > 0) {
                 data.results.forEach(item => {
                     const link = document.createElement('a');
-                    link.href = `https://darknetpirates.site/${encodeURIComponent(item.name.replace(/ /g, "_"))}`;
+                    link.href = `https://darknetpirates.site/${encodeURIComponent(item.url.replace(/ /g,))}`;
                     link.textContent = item.name;
                     link.target = '_blank';
                     resultsDiv.appendChild(link);

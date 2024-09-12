@@ -78,7 +78,7 @@ main {
     text-decoration: none; /* Remove o sublinhado dos links */
     font-size: 12px; /* Diminui o tamanho da fonte dos links */
     color: #888888; /* Cor dos links */
-    margin: 3px 0; /* Espaçamento entre os links */
+    margin: 2px 0; /* Espaçamento entre os links */
 }
 
 #results a:hover {

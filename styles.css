@@ -32,10 +32,10 @@ main {
 
 #searchBar {
     width: 300px; /* Diminuiu a largura da barra de pesquisa */
-    padding: 5px; /* Altura ajustada para deixar mais fina */
+    padding: 3px; /* Altura ajustada para deixar mais fina */
     border: 1px solid #ccc;
     border-radius: 2px; /* Cantos quase quadrados */
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 14px;
     outline: none;
     transition: border-color 0.3s ease;
@@ -46,7 +46,7 @@ main {
 }
 
 #searchButton {
-    padding: 5px 5px; /* Botão mais fino */
+    padding: 2px 8px; /* Botão mais fino */
     border: 1px solid #555;
     border-radius: 3px; /* Cantos menos arredondados */
     cursor: pointer;
@@ -65,7 +65,11 @@ main {
     width: 80%;
     max-width: 600px;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    padding-top: 30px; /* Adiciona mais espaço no topo */
+    background-color: transparent; /* Remove o fundo branco */
+    border-radius: 5px;
+    /* Remove a sombra se necessário */
 }
 
 #results p {

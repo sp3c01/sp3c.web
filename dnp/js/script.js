@@ -17,14 +17,14 @@ document.getElementById('searchButton').addEventListener('click', function() {
             if (data.results.length > 0) {
                 data.results.forEach(item => {
                     const link = document.createElement('a');
-                    link.href = `https://darknetpirates.site/link/${encodeURIComponent(item.name.replace(/ /g, "_"))}`;
+                    link.href = item.url; 
                     link.textContent = item.name;
-                    link.target = '_blank';
+                    link.target = '_blank'; 
                     resultsDiv.appendChild(link);
-                    resultsDiv.appendChild(document.createElement('br'));
+                    resultsDiv.appendChild(document.createElement('br')); 
                 });
             } else {
-                resultsDiv.textContent = 'Nenhum resultado encontrado.';
+                resultsDiv.textContent = 'Em breve...';
             }
         })
         .catch(error => console.error('Erro:', error));

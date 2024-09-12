@@ -77,10 +77,10 @@ main {
     display: block; /* Faz com que os links ocupem toda a largura disponível */
     text-decoration: none; /* Remove o sublinhado dos links */
     font-size: 12px; /* Diminui o tamanho da fonte dos links */
-    color: #000000; /* Cor dos links */
+    color: #888888; /* Cor dos links */
     margin: 3px 0; /* Espaçamento entre os links */
 }
 
 #results a:hover {
-    color: #888888; /* Cor dos links ao passar o mouse */
+    color: #000000; /* Cor dos links ao passar o mouse */
 }

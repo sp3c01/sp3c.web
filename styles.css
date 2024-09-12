@@ -4,116 +4,44 @@ html {
 
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
 }
 
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
 .logo {
-    width: 200px;
-    height: auto;
+    width: 150px;
     margin-bottom: 20px;
 }
 
-.search-container {
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#search-box {
-    width: 350px;
-    padding: 3px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin-bottom: 15px; 
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.0);
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-#search-box:focus {
-    border-color: #000;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.0);
-}
-
-button {
-    padding: 2px 8px;
-    border: 1px solid #555; 
-    border-radius: 3px;
-    cursor: pointer;
-    background-color: #d0d0d0;
-    color: black;
-    font-size: 12px;
-    margin-top: 3px; 
-    transition: box-shadow 0.3s ease;
-}
-
-button:hover {
-    background-color: #b0b0b0;
-}
-
-button:active {
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
-}
-
-#info-box {
-    margin-top: 100px; 
-    padding: 20px; 
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    width: 80%;
-    text-align: center;
-    border-radius: 5px;
-}
-
-#info-box p {
-    margin: 0;
-    font-size: 14px;
-    color: #555;
-    padding-top: 10px; 
-}
-
-main {
-    padding: 20px;
-    text-align: center;
-    margin-top: 30px; 
-}
-
-.results-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.link {
-    margin: 10px 0;
+#searchBar {
+    width: 300px;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }
 
-.link a {
-    text-decoration: none;
-    color: #007bff;
-    font-size: 13px;
-    transition: color 0.3s ease;
+#searchButton {
+    background-color: #d0d0d0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
-.link a:hover {
-    color: #0056b3;
-}
-
-.link a:active {
-    color: red;
+#results {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
 }

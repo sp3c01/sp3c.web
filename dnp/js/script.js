@@ -17,7 +17,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
             if (data.results.length > 0) {
                 data.results.forEach(item => {
                     const link = document.createElement('a');
-                    // Ajusta o formato do nome do item para a URL
+                    // Gera o URL de redirecionamento com o nome do item formatado
                     link.href = `https://darknetpirates.site/link/${encodeURIComponent(item.name)}`;
                     link.textContent = item.name;
                     link.target = '_blank';

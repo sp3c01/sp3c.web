@@ -1,11 +1,13 @@
 document.getElementById('searchButton').addEventListener('click', function() {
     const searchBar = document.getElementById('searchBar');
-    const query = searchBar.value;
 
-    if (!query.trim()) {
+    if (!searchBar.checkValidity()) {
+        // Se o campo não for válido, exibe o aviso
         searchBar.reportValidity();
         return;
     }
+
+    const query = searchBar.value;
 
     fetch(`https://valiant-grey-jingle.glitch.me/search?query=${encodeURIComponent(query)}`)
         .then(response => response.json())

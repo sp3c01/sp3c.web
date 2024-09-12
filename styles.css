@@ -1,43 +1,120 @@
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+    justify-content: flex-start; /* Alinhamento no topo da tela */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 
 .logo {
     width: 150px;
-    margin-bottom: 20px;
+    height: auto;
+    margin-bottom: 10px; /* Reduzi a margem para aproximar os elementos */
 }
 
-main {
+.search-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px; /* Aproxima a barra de pesquisa da logo */
 }
 
-#searchBar {
+#search-box {
     width: 300px;
-    padding: 10px;
+    padding: 5px; /* Ajusta a altura da barra de pesquisa */
     border: 1px solid #ccc;
-    border-radius: 20px;
-    margin-bottom: 10px;
+    border-radius: 4px; /* Deixa os cantos levemente arredondados */
+    margin-bottom: 5px; 
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-#searchButton {
-    background-color: #d0d0d0;
-    border: none;
-    padding: 10px 20px;
+#search-box:focus {
+    border-color: #000;
+}
+
+button {
+    padding: 8px 16px;
+    border: 1px solid #555; 
     border-radius: 20px;
     cursor: pointer;
+    background-color: #d0d0d0;
+    color: black;
+    font-size: 12px;
+    margin-top: 5px; 
+    transition: box-shadow 0.3s ease;
 }
 
-#results {
-    margin-top: 20px;
+button:hover {
+    background-color: #b0b0b0;
+}
+
+button:active {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
+}
+
+#info-box {
+    margin-top: 20px; 
+    padding: 20px; 
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
     width: 80%;
-    max-width: 600px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#info-box p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.results-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.link {
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.link a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.link a:hover {
+    color: #0056b3;
+}
+
+.link a:active {
+    color: red;
 }

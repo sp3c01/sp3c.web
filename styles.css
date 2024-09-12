@@ -32,23 +32,25 @@ main {
 
 #searchBar {
     width: 300px; /* Diminuiu a largura da barra de pesquisa */
-    padding: 3px; /* Altura ajustada para deixar mais fina */
+    padding: 5px; /* Ajustado para uma altura adequada */
     border: 1px solid #ccc;
-    border-radius: 1px; /* Cantos quase quadrados */
+    border-radius: 2px; /* Cantos levemente arredondados */
     margin-bottom: 15px;
     font-size: 14px;
     outline: none;
     transition: border-color 0.3s ease;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destacar o campo */
 }
 
 #searchBar:focus {
     border-color: #000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada no foco */
 }
 
 #searchButton {
-    padding: 2px 8px; /* Botão mais fino */
+    padding: 5px 10px; /* Ajustado para ser mais fino e reto */
     border: 1px solid #555;
-    border-radius: 1px; /* Cantos menos arredondados */
+    border-radius: 2px; /* Cantos levemente arredondados */
     cursor: pointer;
     background-color: #d0d0d0;
     color: black;
@@ -69,11 +71,10 @@ main {
     padding-top: 30px; /* Adiciona mais espaço no topo */
     background-color: transparent; /* Remove o fundo branco */
     border-radius: 5px;
-    /* Remove a sombra se necessário */
 }
 
 #results p {
-    font-size: 1px; /* Tamanho da fonte menor para os resultados */
+    font-size: 14px; /* Ajuste no tamanho da fonte para melhor legibilidade */
     color: #555;
     margin: 5px 0; /* Espaçamento entre os itens */
 }

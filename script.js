@@ -2,7 +2,6 @@ document.getElementById('searchButton').addEventListener('click', function() {
     const searchBar = document.getElementById('searchBar');
 
     if (!searchBar.checkValidity()) {
-        // Se o campo não for válido, exibe o aviso
         searchBar.reportValidity();
         return;
     }

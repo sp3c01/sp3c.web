@@ -17,14 +17,14 @@ document.getElementById('searchButton').addEventListener('click', function() {
             if (data.results.length > 0) {
                 data.results.forEach(item => {
                     const link = document.createElement('a');
-                    link.href = item.url; // Corrigido para usar o campo 'url' corretamente
+                    link.href = item.url; 
                     link.textContent = item.name;
-                    link.target = '_blank'; // Abre o link em uma nova aba
+                    link.target = '_blank'; 
                     resultsDiv.appendChild(link);
-                    resultsDiv.appendChild(document.createElement('br')); // Adiciona quebra de linha entre os links
+                    resultsDiv.appendChild(document.createElement('br')); 
                 });
             } else {
-                resultsDiv.textContent = 'Nenhum resultado encontrado.';
+                resultsDiv.textContent = 'Nada por aqui.';
             }
         })
         .catch(error => console.error('Erro:', error));

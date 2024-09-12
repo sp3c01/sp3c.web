@@ -54,7 +54,6 @@ main {
     color: black;
     font-size: 12px;
     transition: background-color 0.3s ease;
-    margin-left: 10px; /* Espaçamento para mover o botão mais para a esquerda */
 }
 
 #searchButton:hover {
@@ -74,7 +73,7 @@ main {
 }
 
 #results p {
-    font-size: 14px; /* Ajuste no tamanho da fonte para melhor legibilidade */
+    font-size: 1px; /* Tamanho da fonte menor para os resultados */
     color: #555;
     margin: 5px 0; /* Espaçamento entre os itens */
 }

@@ -12,42 +12,18 @@ body {
 
 header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Alinha os itens horizontalmente */
     align-items: center;
     padding-top: 20px;
     margin-bottom: 20px;
-    position: relative; /* Para posicionar o botão "Sobre" */
+    width: 100%; /* Ajusta o header para ocupar toda a largura */
+    justify-content: space-between; /* Espaça os itens ao longo da largura do header */
+    padding: 0 20px; /* Adiciona espaçamento interno lateral */
 }
 
 .logo {
     width: 200px;
     height: auto;
-    margin-bottom: 10px;
-}
-
-#aboutButton {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 2px 8px;
-    border: 1px solid #555;
-    border-radius: 2px;
-    cursor: pointer;
-    background-color: #d0d0d0;
-    color: black;
-    font-size: 12px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-#aboutButton:hover {
-    background-color: #b0b0b0;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 #searchBar {
@@ -74,11 +50,33 @@ main {
     color: black;
     font-size: 12px;
     transition: background-color 0.3s ease;
-    margin-right: 268px; /* Ajusta o espaçamento entre a barra e o botão */
+    margin-right: 10px; /* Ajusta o espaçamento entre a barra e o botão */
 }
 
 #searchButton:hover {
     background-color: #b0b0b0;
+}
+
+#aboutButton {
+    padding: 2px 8px;
+    border: 1px solid #555;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: #d0d0d0;
+    color: black;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#aboutButton:hover {
+    background-color: #b0b0b0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #results {
@@ -90,12 +88,6 @@ main {
     padding-top: 30px; /* Adiciona mais espaço no topo */
     background-color: transparent; /* Remove o fundo branco */
     border-radius: 5px;
-}
-
-#results p {
-    font-size: 14px; /* Ajuste no tamanho da fonte para melhor legibilidade */
-    color: #555;
-    margin: 5px 0;
 }
 
 #results a {

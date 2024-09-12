@@ -10,7 +10,7 @@ body {
     justify-content: center;
     height: 100vh;
     text-align: center;
-    overflow: hidden; /* Remove a rolagem da página */
+    overflow: hidden; 
 }
 
 .container {
@@ -18,8 +18,8 @@ body {
     max-width: 800px;
     padding: 20px;
     border-radius: 5px;
-    background-color: #222; /* Cor de fundo do conteúdo */
-    margin-top: -50px; /* Ajusta a posição do conteúdo para cima */
+    background-color: #222;
+    margin-top: -50px; 
 }
 
 h1 {

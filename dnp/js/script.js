@@ -17,11 +17,11 @@ document.getElementById('searchButton').addEventListener('click', function() {
             if (data.results.length > 0) {
                 data.results.forEach(item => {
                     const link = document.createElement('a');
-                    link.href = item.link;
+                    link.href = item.url; // Corrigido para usar o campo 'url' corretamente
                     link.textContent = item.name;
-                    link.target = '_blank';
+                    link.target = '_blank'; // Abre o link em uma nova aba
                     resultsDiv.appendChild(link);
-                    resultsDiv.appendChild(document.createElement('br'));
+                    resultsDiv.appendChild(document.createElement('br')); // Adiciona quebra de linha entre os links
                 });
             } else {
                 resultsDiv.textContent = 'Nenhum resultado encontrado.';

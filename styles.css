@@ -48,7 +48,7 @@ main {
 #searchButton {
     padding: 2px 8px; /* Botão mais fino */
     border: 1px solid #555;
-    border-radius: 3px; /* Cantos menos arredondados */
+    border-radius: 2px; /* Cantos menos arredondados */
     cursor: pointer;
     background-color: #d0d0d0;
     color: black;

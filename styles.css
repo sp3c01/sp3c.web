@@ -16,12 +16,32 @@ header {
     align-items: center;
     padding-top: 20px;
     margin-bottom: 20px;
+    position: relative; /* Para posicionar o botão "Sobre" */
 }
 
 .logo {
     width: 200px;
     height: auto;
     margin-bottom: 10px;
+}
+
+#aboutButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 2px 8px;
+    border: 1px solid #555;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: #d0d0d0;
+    color: black;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#aboutButton:hover {
+    background-color: #b0b0b0;
 }
 
 main {
@@ -70,7 +90,12 @@ main {
     padding-top: 30px; /* Adiciona mais espaço no topo */
     background-color: transparent; /* Remove o fundo branco */
     border-radius: 5px;
-    /* Remove a sombra se necessário */
+}
+
+#results p {
+    font-size: 14px; /* Ajuste no tamanho da fonte para melhor legibilidade */
+    color: #555;
+    margin: 5px 0;
 }
 
 #results a {

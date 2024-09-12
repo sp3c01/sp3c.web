@@ -4,11 +4,6 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -27,54 +22,52 @@ header {
     margin-bottom: 20px;
 }
 
-/* Container de Pesquisa */
 .search-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#searchBar {
+#search-box {
     width: 350px;
     padding: 3px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    margin-bottom: 15px;
+    margin-bottom: 15px; 
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.0);
     font-size: 14px;
     outline: none;
     transition: border-color 0.3s ease;
 }
 
-#searchBar:focus {
+#search-box:focus {
     border-color: #000;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.0);
 }
 
-#searchButton {
+button {
     padding: 2px 8px;
-    border: 1px solid #555;
+    border: 1px solid #555; 
     border-radius: 3px;
     cursor: pointer;
     background-color: #d0d0d0;
     color: black;
     font-size: 12px;
-    margin-top: 3px;
+    margin-top: 3px; 
     transition: box-shadow 0.3s ease;
 }
 
-#searchButton:hover {
+button:hover {
     background-color: #b0b0b0;
 }
 
-#searchButton:active {
+button:active {
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* Informações e Resultados */
 #info-box {
-    margin-top: 100px;
-    padding: 20px;
+    margin-top: 100px; 
+    padding: 20px; 
     border: 1px solid #ccc;
     background-color: #f9f9f9;
     width: 80%;
@@ -86,13 +79,13 @@ header {
     margin: 0;
     font-size: 14px;
     color: #555;
-    padding-top: 10px;
+    padding-top: 10px; 
 }
 
 main {
     padding: 20px;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 30px; 
 }
 
 .results-container {

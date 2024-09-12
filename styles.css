@@ -73,8 +73,14 @@ main {
     /* Remove a sombra se necessário */
 }
 
-#results p {
-    font-size: 14px; /* Ajuste no tamanho da fonte para melhor legibilidade */
-    color: #555;
-    margin: 5px 0; /* Espaçamento entre os itens */
+#results a {
+    display: block; /* Faz com que os links ocupem toda a largura disponível */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-size: 12px; /* Diminui o tamanho da fonte dos links */
+    color: #555; /* Cor dos links */
+    margin: 5px 0; /* Espaçamento entre os links */
+}
+
+#results a:hover {
+    color: #000; /* Cor dos links ao passar o mouse */
 }

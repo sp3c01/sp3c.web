@@ -30,17 +30,12 @@ main {
     align-items: center;
 }
 
-.search-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaçamento entre a barra de pesquisa e o botão */
-}
-
 #searchBar {
     width: 300px; /* Diminuiu a largura da barra de pesquisa */
     padding: 3px; /* Altura ajustada para deixar mais fina */
     border: 1px solid #ccc;
     border-radius: 1px; /* Cantos quase quadrados */
+    margin-bottom: 15px;
     font-size: 14px;
     outline: none;
     transition: border-color 0.3s ease;
@@ -59,6 +54,7 @@ main {
     color: black;
     font-size: 12px;
     transition: background-color 0.3s ease;
+    margin-left: 10px; /* Espaçamento para mover o botão mais para a esquerda */
 }
 
 #searchButton:hover {

@@ -54,7 +54,7 @@ main {
     color: black;
     font-size: 12px;
     transition: background-color 0.3s ease;
-    margin-right: 240px; /* Ajusta o espaçamento entre a barra e o botão */
+    margin-right: 270px; /* Ajusta o espaçamento entre a barra e o botão */
 }
 
 #searchButton:hover {

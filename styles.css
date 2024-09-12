@@ -48,13 +48,13 @@ main {
 #searchButton {
     padding: 2px 8px; /* Botão mais fino */
     border: 1px solid #555;
-    border-radius: 3px; /* Cantos menos arredondados */
+    border-radius: 2px; /* Cantos menos arredondados */
     cursor: pointer;
     background-color: #d0d0d0;
     color: black;
     font-size: 12px;
     transition: background-color 0.3s ease;
-    margin-right: 269px; /* Ajusta o espaçamento entre a barra e o botão */
+    margin-right: 268px; /* Ajusta o espaçamento entre a barra e o botão */
 }
 
 #searchButton:hover {

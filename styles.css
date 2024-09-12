@@ -12,18 +12,22 @@ body {
 
 header {
     display: flex;
-    flex-direction: row; /* Alinha os itens horizontalmente */
+    flex-direction: column;
     align-items: center;
     padding-top: 20px;
     margin-bottom: 20px;
-    width: 100%; /* Ajusta o header para ocupar toda a largura */
-    justify-content: space-between; /* Espaça os itens ao longo da largura do header */
-    padding: 0 20px; /* Adiciona espaçamento interno lateral */
 }
 
 .logo {
     width: 200px;
     height: auto;
+    margin-bottom: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #searchBar {
@@ -41,6 +45,12 @@ header {
     border-color: #000;
 }
 
+.button-container {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-bottom: 20px; /* Espaçamento abaixo dos botões */
+}
+
 #searchButton {
     padding: 2px 8px; /* Botão mais fino */
     border: 1px solid #555;
@@ -50,7 +60,6 @@ header {
     color: black;
     font-size: 12px;
     transition: background-color 0.3s ease;
-    margin-right: 10px; /* Ajusta o espaçamento entre a barra e o botão */
 }
 
 #searchButton:hover {
@@ -73,20 +82,14 @@ header {
     background-color: #b0b0b0;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #results {
     margin-top: 20px;
     width: 80%;
     max-width: 600px;
     text-align: center;
     padding: 20px;
-    padding-top: 30px; /* Adiciona mais espaço no topo */
-    background-color: transparent; /* Remove o fundo branco */
+    padding-top: 30px;
+    background-color: transparent;
     border-radius: 5px;
 }
 

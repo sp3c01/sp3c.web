@@ -30,12 +30,17 @@ main {
     align-items: center;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre a barra de pesquisa e o botão */
+}
+
 #searchBar {
     width: 300px; /* Diminuiu a largura da barra de pesquisa */
     padding: 3px; /* Altura ajustada para deixar mais fina */
     border: 1px solid #ccc;
     border-radius: 1px; /* Cantos quase quadrados */
-    margin-bottom: 15px;
     font-size: 14px;
     outline: none;
     transition: border-color 0.3s ease;
@@ -73,7 +78,7 @@ main {
 }
 
 #results p {
-    font-size: 1px; /* Tamanho da fonte menor para os resultados */
+    font-size: 14px; /* Ajuste no tamanho da fonte para melhor legibilidade */
     color: #555;
     margin: 5px 0; /* Espaçamento entre os itens */
 }

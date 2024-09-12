@@ -31,10 +31,10 @@ main {
 }
 
 #searchBar {
-    width: 300px; /* Diminuiu a largura da barra de pesquisa */
+    width: 350px; /* Aumenta a largura da barra de pesquisa */
     padding: 3px; /* Altura ajustada para deixar mais fina */
     border: 1px solid #ccc;
-    border-radius: 1px; /* Cantos quase quadrados */
+    border-radius: 2px; /* Cantos quase quadrados */
     margin-bottom: 15px;
     font-size: 14px;
     outline: none;
@@ -48,13 +48,13 @@ main {
 #searchButton {
     padding: 2px 8px; /* Botão mais fino */
     border: 1px solid #555;
-    border-radius: 1px; /* Cantos menos arredondados */
+    border-radius: 3px; /* Cantos menos arredondados */
     cursor: pointer;
     background-color: #d0d0d0;
     color: black;
     font-size: 12px;
     transition: background-color 0.3s ease;
-    margin-right: 233px; /* Espaçamento para mover o botão mais para a esquerda */
+    margin-right: 240px; /* Ajusta o espaçamento entre a barra e o botão */
 }
 
 #searchButton:hover {

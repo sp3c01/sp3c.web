@@ -46,7 +46,7 @@ main {
 }
 
 #searchButton {
-    padding: 5px 10px; /* Botão mais fino */
+    padding: 5px 5px; /* Botão mais fino */
     border: 1px solid #555;
     border-radius: 3px; /* Cantos menos arredondados */
     cursor: pointer;
@@ -66,4 +66,10 @@ main {
     max-width: 600px;
     text-align: center;
     padding: 10px;
+}
+
+#results p {
+    font-size: 12px; /* Tamanho da fonte menor para os resultados */
+    color: #555;
+    margin: 5px 0; /* Espaçamento entre os itens */
 }

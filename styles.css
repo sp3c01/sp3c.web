@@ -49,6 +49,7 @@ main {
     display: flex;
     gap: 10px; /* Espaçamento entre os botões */
     margin-bottom: 20px; /* Espaçamento abaixo dos botões */
+    margin-right: 40px; /* Ajuste o valor conforme necessário */
 }
 
 #searchButton, #aboutButton {
@@ -67,7 +68,15 @@ main {
 }
 
 #aboutButton {
+    padding: 2px 8px;
+    border: 1px solid #555;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: #d0d0d0;
+    color: black;
+    font-size: 12px;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 #aboutButton:hover {

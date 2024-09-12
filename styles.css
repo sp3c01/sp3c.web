@@ -51,7 +51,7 @@ main {
     margin-bottom: 20px; /* Espaçamento abaixo dos botões */
 }
 
-#searchButton {
+#searchButton, #aboutButton {
     padding: 2px 8px; /* Botão mais fino */
     border: 1px solid #555;
     border-radius: 2px; /* Cantos menos arredondados */
@@ -60,7 +60,6 @@ main {
     color: black;
     font-size: 12px;
     transition: background-color 0.3s ease;
-    margin-right: 268px; /* Move o botão "Pirate Search" para a direita */
 }
 
 #searchButton:hover {
@@ -68,16 +67,7 @@ main {
 }
 
 #aboutButton {
-    padding: 2px 8px;
-    border: 1px solid #555;
-    border-radius: 2px;
-    cursor: pointer;
-    background-color: #d0d0d0;
-    color: black;
-    font-size: 12px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-right: 263px; /* Move o botão "Sobre" para a direita */
 }
 
 #aboutButton:hover {

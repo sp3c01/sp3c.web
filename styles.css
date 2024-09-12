@@ -73,7 +73,7 @@ main {
 }
 
 #results p {
-    font-size: 10px; /* Tamanho da fonte menor para os resultados */
+    font-size: 6px; /* Tamanho da fonte menor para os resultados */
     color: #555;
     margin: 5px 0; /* Espaçamento entre os itens */
 }

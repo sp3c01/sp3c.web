@@ -34,7 +34,7 @@ main {
     width: 300px; /* Diminuiu a largura da barra de pesquisa */
     padding: 3px; /* Altura ajustada para deixar mais fina */
     border: 1px solid #ccc;
-    border-radius: 2px; /* Cantos quase quadrados */
+    border-radius: 1px; /* Cantos quase quadrados */
     margin-bottom: 15px;
     font-size: 14px;
     outline: none;
@@ -48,7 +48,7 @@ main {
 #searchButton {
     padding: 2px 8px; /* Botão mais fino */
     border: 1px solid #555;
-    border-radius: 2px; /* Cantos menos arredondados */
+    border-radius: 1px; /* Cantos menos arredondados */
     cursor: pointer;
     background-color: #d0d0d0;
     color: black;

@@ -1,5 +1,11 @@
 document.getElementById('searchButton').addEventListener('click', function() {
-    const query = document.getElementById('searchBar').value;
+    const searchBar = document.getElementById('searchBar');
+    const query = searchBar.value;
+
+    if (!query.trim()) {
+        searchBar.reportValidity();
+        return;
+    }
 
     fetch(`https://valiant-grey-jingle.glitch.me/search?query=${encodeURIComponent(query)}`)
         .then(response => response.json())

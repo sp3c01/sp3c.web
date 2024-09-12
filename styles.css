@@ -49,7 +49,7 @@ main {
     display: flex;
     gap: 10px; /* Espaçamento entre os botões */
     margin-bottom: 20px; /* Espaçamento abaixo dos botões */
-    margin-right: 238px; /* Ajuste o valor conforme necessário */
+    margin-right: 218px; /* Ajuste o valor conforme necessário */
 }
 
 #searchButton, #aboutButton {

@@ -1,7 +1,7 @@
 document.getElementById('searchButton').addEventListener('click', function() {
     const query = document.getElementById('searchBar').value;
 
-    fetch(`https://seu-projeto.glitch.me/search?query=${encodeURIComponent(query)}`)
+    fetch(`https://valiant-grey-jingle.glitch.me/search?query=${encodeURIComponent(query)}`)
         .then(response => response.json())
         .then(data => {
             const resultsDiv = document.getElementById('results');

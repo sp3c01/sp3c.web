@@ -24,7 +24,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
                     resultsDiv.appendChild(document.createElement('br')); 
                 });
             } else {
-                resultsDiv.textContent = 'Em breve...';
+                resultsDiv.textContent = 'Sem resultados para essa pesquisa.';
             }
         })
         .catch(error => console.error('Erro:', error));

@@ -54,3 +54,15 @@ a {
 a:hover {
     background-color: #b0b0b0;
 }
+
+.key-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.key {
+    font-family: monospace;
+    max-width: 300px;
+    word-wrap: break-word;
+}

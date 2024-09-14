@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif; /* Fonte ajustada para Arial */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000;
@@ -14,14 +14,15 @@ body {
     height: 100vh;
     text-align: center;
     overflow: hidden;
-    transform: scale(0.80); /* Ajusta o tamanho do conteúdo */
+    transform: scale(0.80);
+    transform-origin: top;
 }
 
 .container {
     width: 80%;
     max-width: 700px;
     padding: 20px;
-    padding-top: 40px; /* Espaço adicional no topo para o botão */
+    padding-top: 20px;
     border-radius: 5px;
     background-color: #111;
     border: 1px solid #333;
@@ -43,6 +44,7 @@ p {
 a {
     display: inline-block;
     margin-top: 20px;
+    margin-left: 1px; /* Ajusta o botão 1 pixel para a direita */
     padding: 10px 20px;
     border: 2px solid #555;
     border-radius: 5px;

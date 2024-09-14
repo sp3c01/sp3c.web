@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, sans-serif; /* Fonte ajustada para Arial */
     margin: 0;
     padding: 0;
     background-color: #000;
@@ -14,7 +14,7 @@ body {
     height: 100vh;
     text-align: center;
     overflow: hidden;
-    transform: scale(0.95); /* Ajusta o tamanho do conteúdo */
+    transform: scale(0.50); /* Ajusta o tamanho do conteúdo */
 }
 
 .container {

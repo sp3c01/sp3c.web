@@ -44,7 +44,7 @@ p {
 a {
     display: inline-block;
     margin-top: 20px;
-    margin-left: 1px; /* Ajusta o botão 1 pixel para a direita */
+    margin-left: -7px; /* Ajusta o botão 1 pixel para a direita */
     padding: 10px 20px;
     border: 2px solid #555;
     border-radius: 5px;

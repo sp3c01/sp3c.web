@@ -66,3 +66,8 @@ a:hover {
     max-width: 300px;
     word-wrap: break-word;
 }
+
+.key-container img {
+    width: 16px;
+    height: 16px;
+}

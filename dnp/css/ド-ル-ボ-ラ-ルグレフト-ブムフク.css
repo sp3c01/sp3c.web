@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
     background-color: #000;
@@ -22,8 +22,9 @@ body {
     max-width: 800px;
     padding: 20px;
     border-radius: 5px;
-    background-color: #222;
-    margin-top: -95px; 
+    background-color: #111; /* Cor de fundo mais escura */
+    border: 1px solid #333; /* Adiciona uma borda para um visual mais antigo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para um efeito mais profundo */
 }
 
 h1 {
@@ -34,31 +35,33 @@ h1 {
 p {
     font-size: 16px;
     line-height: 1.5;
+    margin: 20px 0; /* Adiciona espaço entre parágrafos */
 }
 
 a {
     display: inline-block;
     margin-top: 20px;
-    margin-left: -6px; 
     padding: 10px 20px;
-    border: 1px solid #555;
-    border-radius: 2px;
+    border: 2px solid #555; /* Borda mais espessa para um visual mais antigo */
+    border-radius: 5px; /* Borda arredondada para um efeito mais clássico */
     cursor: pointer;
-    background-color: #d0d0d0;
-    color: black;
+    background-color: #222; /* Cor de fundo mais escura */
+    color: #fff;
     text-decoration: none;
     font-size: 14px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adiciona um efeito de transformação ao hover */
 }
 
 a:hover {
-    background-color: #b0b0b0;
+    background-color: #444; /* Cor de fundo alterada ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento no tamanho ao passar o mouse */
 }
 
 .key-container {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin: 20px 0; /* Adiciona espaço ao redor do container */
 }
 
 .key {

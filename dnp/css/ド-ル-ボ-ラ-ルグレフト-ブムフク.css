@@ -14,7 +14,7 @@ body {
     height: 100vh;
     text-align: center;
     overflow: hidden;
-    transform: scale(0.50); /* Ajusta o tamanho do conteúdo */
+    transform: scale(0.80); /* Ajusta o tamanho do conteúdo */
 }
 
 .container {

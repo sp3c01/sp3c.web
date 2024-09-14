@@ -5,7 +5,7 @@ html {
 body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
-    padding: 0;
+    padding: 20px; /* Espaço ao redor do conteúdo */
     background-color: #000;
     color: #fff;
     display: flex;
@@ -23,7 +23,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     background-color: #111; /* Cor de fundo mais escura */
-    border: 1px solid #333; /* Adiciona uma borda para um visual mais antigo */
+    border: 1px solid #333; /* Borda para um visual mais antigo */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para um efeito mais profundo */
 }
 
@@ -43,7 +43,7 @@ a {
     margin-top: 20px;
     padding: 10px 20px;
     border: 2px solid #555; /* Borda mais espessa para um visual mais antigo */
-    border-radius: 5px; /* Borda arredondada para um efeito mais clássico */
+    border-radius: 5px; /* Borda arredondada */
     cursor: pointer;
     background-color: #222; /* Cor de fundo mais escura */
     color: #fff;

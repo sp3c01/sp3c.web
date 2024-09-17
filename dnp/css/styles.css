@@ -104,8 +104,7 @@ main {
     padding: 10px 0; /* Padding reduzido */
     border-bottom: 1px solid #ccc; /* Linha de separação entre os links */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start; /* Alinhado à esquerda */
 }
 
 /* Remove a borda no último item */

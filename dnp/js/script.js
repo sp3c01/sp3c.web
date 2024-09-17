@@ -22,10 +22,10 @@ document.getElementById('searchButton').addEventListener('click', function() {
                     const resultItem = document.createElement('div');
                     resultItem.classList.add('result-item'); // Adiciona a classe CSS
 
-                    // Cria a barra marrom no topo
-                    const resultHeader = document.createElement('div');
-                    resultHeader.classList.add('result-header');
-                    resultHeader.textContent = "Tipo: Link";
+                    // Cria o texto "Nome:"
+                    const resultText = document.createElement('span');
+                    resultText.textContent = "Nome: ";
+                    resultText.classList.add('result-text');
 
                     // Cria o link do item
                     const resultLink = document.createElement('a');
@@ -34,19 +34,13 @@ document.getElementById('searchButton').addEventListener('click', function() {
                     resultLink.target = '_blank'; // Abre o link em nova aba
                     resultLink.classList.add('result-link'); // Classe para estilo
 
-                    // Adiciona o nome ao lado
-                    const resultText = document.createElement('span');
-                    resultText.textContent = "Nome: ";
-                    resultText.classList.add('result-text');
-
                     // Agrupa o texto "Nome" e o link no contêiner
                     const resultContent = document.createElement('div');
                     resultContent.classList.add('result-content');
                     resultContent.appendChild(resultText);
                     resultContent.appendChild(resultLink);
 
-                    // Adiciona a barra marrom e o conteúdo ao bloco
-                    resultItem.appendChild(resultHeader);
+                    // Adiciona o conteúdo ao bloco de resultados
                     resultItem.appendChild(resultContent);
 
                     // Adiciona o item de resultado ao contêiner de resultados

@@ -91,7 +91,7 @@ main {
     margin-top: 20px;
     width: 80%;
     max-width: 600px;
-    background-color: #fff;
+    background-color: #FFFAFA; /* Cor de fundo atualizada */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
@@ -105,33 +105,26 @@ main {
     margin-bottom: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #f9f9f9;
+    background-color: #FFFAFA; /* Cor de fundo atualizada */
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
+    flex-direction: column; /* Alterado para coluna */
 }
 
-.result-item .result-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
+.result-item a {
+    font-size: 14px;
+    color: #00008B;
+    text-decoration: none;
+}
+
+.result-item a:hover {
+    color: #8B0000;
 }
 
 .result-item .result-text {
     font-weight: bold;
-    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
-    overflow: hidden; /* Oculta o texto que ultrapassa o limite do bloco */
-    text-overflow: ellipsis; /* Adiciona reticências quando o texto é muito longo */
-    flex-shrink: 0; /* Impede que o texto encolha */
 }
 
 .result-item .result-link {
-    text-decoration: none;
-    color: #00008B;
-}
-
-.result-item .result-link:hover {
-    color: #8B0000;
+    display: block; /* Exibe o link em bloco */
+    margin-top: 5px; /* Espaçamento superior para o link */
 }

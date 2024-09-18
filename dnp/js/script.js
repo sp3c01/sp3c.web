@@ -25,12 +25,11 @@ document.getElementById('searchButton').addEventListener('click', function() {
 
                     const resultHeader = document.createElement('div');
                     resultHeader.classList.add('result-header');
-                    resultHeader.textContent = 'Nome:';
+                    resultHeader.textContent = 'Name:';
 
-                    // Alterando o estilo diretamente no JS
-                    resultHeader.style.fontSize = '11px';   // Diminui o tamanho da fonte
-                    resultHeader.style.fontWeight = 'bold'; // Define a fonte em negrito
-                    resultHeader.style.color = '#00008B';   // Muda a cor para azul
+                    resultHeader.style.fontSize = '11px';   
+                    resultHeader.style.fontWeight = 'bold'; 
+                    resultHeader.style.color = '#00008B';   
 
                     const resultLink = document.createElement('a');
                     resultLink.href = item.url;

@@ -47,7 +47,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
                 noResultsMessage.textContent = 'Sem resultados para essa pesquisa.';
                 noResultsMessage.style.textAlign = 'center';
                 noResultsMessage.style.padding = '20px';
-                noResultsMessage.style.backgroundColor = '#FFFFFF';
+                noResultsMessage.style.backgroundColor = '#ccc';
 
                 document.body.appendChild(noResultsMessage);
             }

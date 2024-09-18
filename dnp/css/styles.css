@@ -114,15 +114,10 @@ main {
     margin-right: 10px;
 }
 
-.result-text {
-    font-size: 11px; /* Tamanho diminuído da palavra "Nome" */
-    margin-right: 5px;
-}
-
 .result-link {
     color: #00008B;
     text-decoration: none;
-    font-size: 12px; /* Diminuído para 12px */
+    font-size: 13px;
     line-height: 1.6; 
 }
 

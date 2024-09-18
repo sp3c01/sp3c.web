@@ -12,12 +12,21 @@ document.getElementById('searchButton').addEventListener('click', function() {
     fetch(`https://valiant-grey-jingle.glitch.me/search?query=${encodeURIComponent(query)}`)
         .then(response => response.json())
         .then(data => {
-            resultsDiv.innerHTML = ''; // Limpa os resultados anteriores
+            // Limpa resultados anteriores e mensagem de "sem resultados"
+            resultsDiv.innerHTML = '';
+            const noResultsMessage = document.getElementById('noResultsMessage');
+            if (noResultsMessage) {
+                noResultsMessage.remove();
+            }
 
             if (data.results.length > 0) {
                 data.results.forEach(item => {
                     const resultItem = document.createElement('div');
                     resultItem.classList.add('result-item');
+
+                    const resultHeader = document.createElement('div');
+                    resultHeader.classList.add('result-header');
+                    resultHeader.textContent = 'Nome:';
 
                     const resultLink = document.createElement('a');
                     resultLink.href = item.url;
@@ -25,21 +34,25 @@ document.getElementById('searchButton').addEventListener('click', function() {
                     resultLink.target = '_blank';
                     resultLink.classList.add('result-link');
 
+                    resultItem.appendChild(resultHeader);
                     resultItem.appendChild(resultLink);
                     resultsDiv.appendChild(resultItem);
                 });
 
-                resultsDiv.style.display = 'block';
-            } else {
-                const noResultsMessage = document.createElement('div');
-                noResultsMessage.textContent = 'Sem resultados para essa pesquisa.';
-                noResultsMessage.style.textAlign = 'center'; // Centraliza o texto
-                noResultsMessage.style.padding = '20px'; // Adiciona padding ao redor da mensagem
-                noResultsMessage.style.backgroundColor = '#FFF5EE'; // Cor de fundo semelhante ao bloco
-
                 resultsDiv.style.display = 'block'; // Exibe o bloco de resultados
-                resultsDiv.innerHTML = ''; // Limpa o conteúdo do bloco
-                resultsDiv.appendChild(noResultsMessage); // Adiciona a mensagem de "sem resultados" ao bloco
+            } else {
+                // Cria e exibe a mensagem de "sem resultados"
+                resultsDiv.style.display = 'none'; // Oculta o bloco de resultados
+
+                const noResultsMessage = document.createElement('div');
+                noResultsMessage.id = 'noResultsMessage';
+                noResultsMessage.textContent = 'Sem resultados para essa pesquisa.';
+                noResultsMessage.style.textAlign = 'center';
+                noResultsMessage.style.padding = '20px';
+                noResultsMessage.style.backgroundColor = '#FFF5EE';
+
+                // Adiciona a mensagem de "sem resultados" ao corpo da página, fora do bloco de resultados
+                document.body.appendChild(noResultsMessage);
             }
         })
         .catch(error => console.error('Erro:', error));

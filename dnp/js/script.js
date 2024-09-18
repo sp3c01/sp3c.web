@@ -12,7 +12,6 @@ document.getElementById('searchButton').addEventListener('click', function() {
     fetch(`https://valiant-grey-jingle.glitch.me/search?query=${encodeURIComponent(query)}`)
         .then(response => response.json())
         .then(data => {
-            // Limpa resultados anteriores e mensagem de "sem resultados"
             resultsDiv.innerHTML = '';
             const noResultsMessage = document.getElementById('noResultsMessage');
             if (noResultsMessage) {
@@ -39,10 +38,9 @@ document.getElementById('searchButton').addEventListener('click', function() {
                     resultsDiv.appendChild(resultItem);
                 });
 
-                resultsDiv.style.display = 'block'; // Exibe o bloco de resultados
+                resultsDiv.style.display = 'block'; 
             } else {
-                // Cria e exibe a mensagem de "sem resultados"
-                resultsDiv.style.display = 'none'; // Oculta o bloco de resultados
+                resultsDiv.style.display = 'none'; 
 
                 const noResultsMessage = document.createElement('div');
                 noResultsMessage.id = 'noResultsMessage';
@@ -51,7 +49,6 @@ document.getElementById('searchButton').addEventListener('click', function() {
                 noResultsMessage.style.padding = '20px';
                 noResultsMessage.style.backgroundColor = '#f4f4f4';
 
-                // Adiciona a mensagem de "sem resultados" ao corpo da página, fora do bloco de resultados
                 document.body.appendChild(noResultsMessage);
             }
         })

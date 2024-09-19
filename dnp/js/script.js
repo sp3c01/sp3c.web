@@ -20,11 +20,11 @@ document.getElementById('searchButton').addEventListener('click', function() {
     }
 
     // Primeira tentativa na primeira API
-    fetchFromAPI('https://api2-srk9.onrender.com/search')
+    fetchFromAPI('https://valiant-grey-jingle.glitch.me/search')
         .then(handleResults)
         .catch(() => {
             console.error('Primeira API falhou, tentando a segunda API...');
-            return fetchFromAPI('https://valiant-grey-jingle.glitch.me/search');
+            return fetchFromAPI('https://api2-srk9.onrender.com/search');
         })
         .then(handleResults)
         .catch(error => {

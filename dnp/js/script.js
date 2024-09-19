@@ -12,14 +12,17 @@ document.getElementById('searchButton').addEventListener('click', function() {
     // Função para fazer requisição à API
     function fetchFromAPI(apiUrl) {
         return fetch(`${apiUrl}?query=${encodeURIComponent(query)}`)
-            .then(response => response.json());
+            .then(response => response.json())
+            .then(data => {
+                console.log('Resposta da API:', data); // Adiciona o log aqui
+                return data;  // Certifique-se de retornar os dados aqui
+            });
     }
 
     // Primeira tentativa na primeira API
     fetchFromAPI('https://api2-srk9.onrender.com/search')
         .then(handleResults)
         .catch(() => {
-            // Se a primeira API falhar, tentar a segunda
             console.error('Primeira API falhou, tentando a segunda API...');
             return fetchFromAPI('https://valiant-grey-jingle.glitch.me/search');
         })
@@ -67,7 +70,8 @@ document.getElementById('searchButton').addEventListener('click', function() {
             displayNoResultsMessage('Sem resultados para essa pesquisa.');
         }
     }
-    
+
+    // Função para exibir a mensagem de "Sem resultados"
     function displayNoResultsMessage(message) {
         const noResultsMessage = document.createElement('div');
         noResultsMessage.id = 'noResultsMessage';

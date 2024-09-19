@@ -9,7 +9,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
 
     const query = searchBar.value;
 
-    fetch(`https://valiant-grey-jingle.glitch.me/search?query=${encodeURIComponent(query)}`)
+    fetch(`https://api2-srk9.onrender.com/search?query=${encodeURIComponent(query)}`)
         .then(response => response.json())
         .then(data => {
             resultsDiv.innerHTML = '';

@@ -1,29 +1,62 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dnp</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.darknetpirates">
-    <link rel="stylesheet" href="dnp/css/styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>403 Forbidden</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            border: 1px solid #ff0000;
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff0000;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #ff0000;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border: 1px solid #ff0000;
+            padding: 10px 20px;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #ff0000;
+            color: #000;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <img src="dnp/images/pirate.png" alt="Logo" class="logo">
-</header>
-<main>
-    <input type="text" id="searchBar" placeholder="Pirate Search" required>
-    <div class="button-container">
-        <button id="searchButton">Pirate Search</button>
-        <a href="dnp/sobre.html" id="aboutButton">Sobre</a>
+    <div class="container">
+        <h1>403 Forbidden</h1>
+        <p>You don't have permission to access this resource.</p>
+        <p>If you think this is an error, please contact the site administrator.</p>
+        <a href="/">Return to homepage</a>
     </div>
-    <div id="results"></div>
-</main>
-
-<script src="dnp/js/script.js"></script>
 </body>
 </html>

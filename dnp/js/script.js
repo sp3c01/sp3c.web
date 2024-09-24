@@ -1,4 +1,3 @@
-
 const API_KEY = 'AIzaSyBfBiCU8lbIcryMfL2ojgwd-vYn2bO3Suk';
 const videoContainer = document.getElementById('video-container');
 const searchButton = document.getElementById('search-button');
@@ -55,9 +54,10 @@ function playVideo(videoId) {
 }
 
 function loadInitialVideos() {
-    const query = 'Peppa Pig';
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('search') || 'Peppa Pig';
     searchVideos(query);
-    updateURL(query);
+    searchBar.value = query; // Define a barra de pesquisa para o termo atual
 }
 
 function updateURL(query) {

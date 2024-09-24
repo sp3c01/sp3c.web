@@ -54,26 +54,23 @@ function playVideo(videoId) {
 }
 
 function loadInitialVideos() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const query = urlParams.get('search') || 'Peppa Pig'; // Se não houver pesquisa, usa 'Peppa Pig'
+    const query = 'Peppa Pig';
     searchVideos(query);
-    searchBar.value = query; // Define a barra de pesquisa para o termo atual
+    updateURL(query);
 }
 
 function updateURL(query) {
-    const newUrl = `?search=${encodeURIComponent(query)}`; // Atualiza a URL com o novo termo
-    window.history.pushState({ search: query }, '', newUrl); // Atualiza o histórico do navegador
+    const newUrl = `?search=${encodeURIComponent(query)}`;
+    window.history.pushState({ search: query }, '', newUrl);
 }
 
-// Adiciona o evento de clique ao botão de busca
 searchButton.addEventListener('click', () => {
-    const query = searchBar.value.trim(); // Remove espaços em branco do início e do fim
+    const query = searchBar.value;
     if (query) {
-        searchVideos(query); // Realiza a pesquisa
-        videoPlayer.style.display = 'none'; // Esconde o player de vídeo
-        updateURL(query); // Atualiza a URL com a nova pesquisa
+        searchVideos(query);
+        videoPlayer.style.display = 'none';
+        updateURL(query);
     }
 });
 
-// Carrega os vídeos iniciais quando a página é carregada
 window.onload = loadInitialVideos;

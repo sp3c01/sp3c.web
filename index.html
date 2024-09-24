@@ -1,64 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>403 Forbidden</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; 
-            height: 100vh;
-            margin: 0;
-            overflow: hidden; 
-            text-align: center;
-            padding-top: 190px; 
-        }
-
-        .container {
-            border: 1px solid #ff0000;
-            padding: 50px;
-            background-color: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #ff0000;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        a {
-            color: #ff0000;
-            text-decoration: none;
-            font-size: 1.2rem;
-            border: 1px solid #ff0000;
-            padding: 10px 20px;
-            transition: background 0.3s ease;
-        }
-
-        a:hover {
-            background-color: #ff0000;
-            color: #000;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>403 Forbidden</h1>
-        <p>You do not have permission to access this resource.</p>
-        <p>If you think this is an error, please contact the site administrator.</p>
-        <a href="/">Return to home page</a>
+    <div id="app">
+        <header>
+            <input type="text" id="search-bar" placeholder="Buscar vídeos...">
+            <button id="search-button">Buscar</button>
+        </header>
+
+        <div id="video-player-container" style="display: none;">
+            <div id="player"></div>
+        </div>
+
+        <main id="video-container">
+        </main>
     </div>
+
+    <script src="dnp/js/script.js"></script>
+    <script>
+        let player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '500',
+                width: '100%',
+                videoId: '',
+                playerVars: {
+                    'playsinline': 1,
+                    'controls': 1,
+                    'modestbranding': 1,
+                    'color': 'blue',
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+        }
+
+        function onPlayerStateChange(event) {
+        }
+
+        function playVideo(videoId) {
+            player.loadVideoById(videoId);
+            document.getElementById('video-player-container').style.display = 'block';
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>

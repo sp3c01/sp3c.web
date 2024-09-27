@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyC2oj32EFUyYhAsmN1H1LshSz7HuKLDCtM';
+const API_KEY = 'AIzaSyC2oj32EFUyHAsmN1H1LshSz7HuKLDCtM';
 const CX_KEY = 'a230bcd809ae047f3';
 const searchButton = document.getElementById('searchButton');
 const searchInput = document.getElementById('searchInput');
@@ -22,14 +22,14 @@ searchButton.addEventListener('click', () => {
     }
 });
 
-async function logInteraction(query) {
+async function logInteraction(data) {
     try {
         await fetch(backendURL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ action: 'search', query: query })
+            body: JSON.stringify(data)
         });
     } catch (error) {
         console.error('Erro ao registrar a interação:', error);
@@ -43,12 +43,20 @@ function updateURL(query) {
 
 async function searchPDFs(query) {
     const url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CX_KEY}&q=${query}+filetype:pdf`;
-    
+
+    console.log(`Buscando por: ${query}`); // Log para verificar o que está sendo pesquisado
+
     try {
         const response = await fetch(url);
         const data = await response.json();
-        
-        displayResults(data.items);
+
+        if (response.ok) {
+            displayResults(data.items);
+            logInteraction({ action: 'results', query: query, results: data.items }); // Log dos resultados
+        } else {
+            console.error('Erro ao buscar PDFs:', data); // Log do erro
+            resultsDiv.innerHTML = 'Erro ao buscar PDFs. Tente novamente.';
+        }
     } catch (error) {
         console.error('Erro ao buscar PDFs:', error);
         resultsDiv.innerHTML = 'Erro ao buscar PDFs. Tente novamente.';
@@ -72,6 +80,6 @@ function displayResults(items) {
         `;
         resultsDiv.appendChild(resultItem);
         
-        logInteraction(`Clicou no resultado: ${item.title}`);
+        logInteraction({ action: 'click', title: item.title }); // Log do clique no resultado
     });
 }

@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyC2oj32EFUyHhAsmN1H1LshSz7HuKLDCtM';
+const API_KEY = 'AIzaSyC2oj32EFUyYhAsmN1H1LshSz7HuKLDCtM';
 const CX_KEY = 'a230bcd809ae047f3';
 const searchButton = document.getElementById('searchButton');
 const searchInput = document.getElementById('searchInput');
@@ -9,7 +9,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const queryParam = urlParams.get('query');
 if (queryParam) {
     searchInput.value = queryParam;
-    logInteraction({ action: 'search', query: queryParam }); // Log de pesquisa
+    logInteraction(queryParam);
     searchPDFs(queryParam);
 }
 
@@ -17,19 +17,19 @@ searchButton.addEventListener('click', () => {
     const query = searchInput.value;
     if (query) {
         updateURL(query);
-        logInteraction({ action: 'search', query: query }); // Log de pesquisa
+        logInteraction(query);
         searchPDFs(query);
     }
 });
 
-async function logInteraction(data) {
+async function logInteraction(query) {
     try {
         await fetch(backendURL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data) // Muda para enviar o objeto completo
+            body: JSON.stringify({ action: 'search', query: query })
         });
     } catch (error) {
         console.error('Erro ao registrar a interação:', error);
@@ -49,8 +49,6 @@ async function searchPDFs(query) {
         const data = await response.json();
         
         displayResults(data.items);
-        // Log os resultados da pesquisa
-        logInteraction({ action: 'results', query: query, results: data.items });
     } catch (error) {
         console.error('Erro ao buscar PDFs:', error);
         resultsDiv.innerHTML = 'Erro ao buscar PDFs. Tente novamente.';
@@ -69,14 +67,11 @@ function displayResults(items) {
         const resultItem = document.createElement('div');
         resultItem.classList.add('result-item');
         resultItem.innerHTML = `
-            <h3><a href="${item.link}" target="_blank" class="result-link">${item.title}</a></h3>
+            <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
             <p>${item.snippet}</p>
         `;
         resultsDiv.appendChild(resultItem);
         
-        // Adiciona evento de clique para registrar quando o resultado é clicado
-        resultItem.querySelector('.result-link').addEventListener('click', () => {
-            logInteraction({ action: 'click', title: item.title, link: item.link });
-        });
+        logInteraction(`Clicou no resultado: ${item.title}`);
     });
 }

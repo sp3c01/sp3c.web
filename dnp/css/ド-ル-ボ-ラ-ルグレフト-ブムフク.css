@@ -1,1 +1,88 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 1px;
+}
 
+.container {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    border-radius: 0px;
+    background-color: transparent;
+}
+
+.logo {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 1px 8px;
+    margin: 8px 0;
+    border: 1px solid #000;
+    border-radius: 2px;
+    background-color: #000;
+    color: #e0e0e0;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #5cb85c;
+    outline: none;
+}
+
+button {
+    padding: 1px 10px;
+    border: none;
+    border-radius: 2px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    outline: none;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 0.70em;
+    font-family: Arial, sans-serif;
+}
+
+button:hover {
+    background-color: #000;
+    color: #000;
+}
+
+button:active {
+    background-color: #d1d1d1;
+    color: #000;
+}
+
+#results {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.result-item {
+    padding: 8px;
+    margin: 8px 0;
+    background-color: transparent;
+    border: none;
+}
+
+.result-item h3 a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+.result-item h3 a:hover {
+    text-decoration: underline;
+}
+
+.result-item p {
+    color: #555;
+}

@@ -9,7 +9,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const queryParam = urlParams.get('query');
 if (queryParam) {
     searchInput.value = queryParam;
-    logInteraction({ action: 'search', query: queryParam }); // Log de pesquisa
+    logInteraction({ action: 'search', query: queryParam });
     searchPDFs(queryParam);
 }
 
@@ -17,7 +17,7 @@ searchButton.addEventListener('click', () => {
     const query = searchInput.value;
     if (query) {
         updateURL(query);
-        logInteraction({ action: 'search', query: query }); // Log de pesquisa
+        logInteraction({ action: 'search', query: query });
         searchPDFs(query);
     }
 });
@@ -29,7 +29,7 @@ async function logInteraction(data) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data) // Muda para enviar o objeto completo
+            body: JSON.stringify(data)
         });
     } catch (error) {
         console.error('Erro ao registrar a interação:', error);
@@ -48,9 +48,13 @@ async function searchPDFs(query) {
         const response = await fetch(url);
         const data = await response.json();
         
-        displayResults(data.items);
-        // Log os resultados da pesquisa
-        logInteraction({ action: 'results', query: query, results: data.items });
+        if (response.ok) {
+            displayResults(data.items);
+            logInteraction({ action: 'results', query: query, results: data.items });
+        } else {
+            console.error('Erro ao buscar PDFs:', data);
+            resultsDiv.innerHTML = 'Erro ao buscar PDFs. Tente novamente.';
+        }
     } catch (error) {
         console.error('Erro ao buscar PDFs:', error);
         resultsDiv.innerHTML = 'Erro ao buscar PDFs. Tente novamente.';
@@ -60,7 +64,7 @@ async function searchPDFs(query) {
 function displayResults(items) {
     resultsDiv.innerHTML = '';
 
-    if (!items) {
+    if (!items || items.length === 0) {
         resultsDiv.innerHTML = 'Nenhum resultado encontrado.';
         return;
     }
@@ -74,7 +78,6 @@ function displayResults(items) {
         `;
         resultsDiv.appendChild(resultItem);
         
-        // Adiciona evento de clique para registrar quando o resultado é clicado
         resultItem.querySelector('.result-link').addEventListener('click', () => {
             logInteraction({ action: 'click', title: item.title, link: item.link });
         });

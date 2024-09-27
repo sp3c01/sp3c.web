@@ -1,34 +1,25 @@
-let API_KEY, CX_KEY, backendURL;
+const API_KEY = 'AIzaSyC2oj32EFUyYhAsmN1H1LshSz7HuKLDCtM';
+const CX_KEY = 'a230bcd809ae047f3';
+const searchButton = document.getElementById('searchButton');
+const searchInput = document.getElementById('searchInput');
+const resultsDiv = document.getElementById('results');
+const backendURL = 'https://aware-winter-tarsal.glitch.me/log';
 
-async function loadConfig() {
-    const response = await fetch('config.json');
-    const config = await response.json();
-    API_KEY = config.API_KEY;
-    CX_KEY = config.CX_KEY;
-    backendURL = config.BACKEND_URL;
+const urlParams = new URLSearchParams(window.location.search);
+const queryParam = urlParams.get('query');
+if (queryParam) {
+    searchInput.value = queryParam;
+    logInteraction(queryParam);
+    searchPDFs(queryParam);
 }
 
-loadConfig().then(() => {
-    const searchButton = document.getElementById('searchButton');
-    const searchInput = document.getElementById('searchInput');
-    const resultsDiv = document.getElementById('results');
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const queryParam = urlParams.get('query');
-    if (queryParam) {
-        searchInput.value = queryParam;
-        logInteraction(queryParam);
-        searchPDFs(queryParam);
+searchButton.addEventListener('click', () => {
+    const query = searchInput.value;
+    if (query) {
+        updateURL(query);
+        logInteraction(query);
+        searchPDFs(query);
     }
-
-    searchButton.addEventListener('click', () => {
-        const query = searchInput.value;
-        if (query) {
-            updateURL(query);
-            logInteraction(query);
-            searchPDFs(query);
-        }
-    });
 });
 
 async function logInteraction(query) {

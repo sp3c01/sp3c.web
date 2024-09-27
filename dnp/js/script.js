@@ -4,6 +4,7 @@ const searchButton = document.getElementById('searchButton');
 const searchInput = document.getElementById('searchInput');
 const resultsDiv = document.getElementById('results');
 const backendURL = 'https://aware-winter-tarsal.glitch.me/log';
+const searchCountsDiv = document.getElementById('searchCounts'); // Div para exibir contagens
 
 const urlParams = new URLSearchParams(window.location.search);
 const queryParam = urlParams.get('query');
@@ -48,13 +49,12 @@ async function searchPDFs(query) {
         const response = await fetch(url);
         const data = await response.json();
         
-        if (response.ok) {
-            displayResults(data.items);
-            logInteraction({ action: 'results', query: query, results: data.items });
-        } else {
-            console.error('Erro ao buscar PDFs:', data);
-            resultsDiv.innerHTML = 'Erro ao buscar PDFs. Tente novamente.';
-        }
+        displayResults(data.items);
+        // Log os resultados da pesquisa
+        logInteraction({ action: 'results', query: query, results: data.items });
+
+        // Atualiza as contagens de pesquisa
+        await updateSearchCounts();
     } catch (error) {
         console.error('Erro ao buscar PDFs:', error);
         resultsDiv.innerHTML = 'Erro ao buscar PDFs. Tente novamente.';
@@ -82,4 +82,23 @@ function displayResults(items) {
             logInteraction({ action: 'click', title: item.title, link: item.link });
         });
     });
+}
+
+async function updateSearchCounts() {
+    try {
+        const response = await fetch('https://aware-winter-tarsal.glitch.me/search_counts');
+        const data = await response.json();
+        
+        displaySearchCounts(data.search_counts);
+    } catch (error) {
+        console.error('Erro ao buscar contagens de pesquisa:', error);
+    }
+}
+
+function displaySearchCounts(counts) {
+    searchCountsDiv.innerHTML = '<h4>Contagem de Pesquisas:</h4>';
+    for (const query in counts) {
+        const count = counts[query];
+        searchCountsDiv.innerHTML += `<p>${query}: ${count} vez(es)</p>`;
+    }
 }

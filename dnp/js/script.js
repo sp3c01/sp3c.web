@@ -9,7 +9,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const queryParam = urlParams.get('query');
 if (queryParam) {
     searchInput.value = queryParam;
-    logInteraction(queryParam);
+    logInteraction({ action: 'search', query: queryParam }); // Log de pesquisa
     searchPDFs(queryParam);
 }
 
@@ -17,7 +17,7 @@ searchButton.addEventListener('click', () => {
     const query = searchInput.value;
     if (query) {
         updateURL(query);
-        logInteraction(query);
+        logInteraction({ action: 'search', query: query }); // Log de pesquisa
         searchPDFs(query);
     }
 });
@@ -29,7 +29,7 @@ async function logInteraction(data) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data) // Muda para enviar o objeto completo
         });
     } catch (error) {
         console.error('Erro ao registrar a interação:', error);
@@ -43,20 +43,14 @@ function updateURL(query) {
 
 async function searchPDFs(query) {
     const url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CX_KEY}&q=${query}+filetype:pdf`;
-
-    console.log(`Buscando por: ${query}`); // Log para verificar o que está sendo pesquisado
-
+    
     try {
         const response = await fetch(url);
         const data = await response.json();
-
-        if (response.ok) {
-            displayResults(data.items);
-            logInteraction({ action: 'results', query: query, results: data.items }); // Log dos resultados
-        } else {
-            console.error('Erro ao buscar PDFs:', data); // Log do erro
-            resultsDiv.innerHTML = 'Erro ao buscar PDFs. Tente novamente.';
-        }
+        
+        displayResults(data.items);
+        // Log os resultados da pesquisa
+        logInteraction({ action: 'results', query: query, results: data.items });
     } catch (error) {
         console.error('Erro ao buscar PDFs:', error);
         resultsDiv.innerHTML = 'Erro ao buscar PDFs. Tente novamente.';
@@ -75,11 +69,14 @@ function displayResults(items) {
         const resultItem = document.createElement('div');
         resultItem.classList.add('result-item');
         resultItem.innerHTML = `
-            <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+            <h3><a href="${item.link}" target="_blank" class="result-link">${item.title}</a></h3>
             <p>${item.snippet}</p>
         `;
         resultsDiv.appendChild(resultItem);
         
-        logInteraction({ action: 'click', title: item.title }); // Log do clique no resultado
+        // Adiciona evento de clique para registrar quando o resultado é clicado
+        resultItem.querySelector('.result-link').addEventListener('click', () => {
+            logInteraction({ action: 'click', title: item.title, link: item.link });
+        });
     });
 }

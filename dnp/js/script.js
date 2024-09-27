@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyC2oj32EFUyHAsmN1H1LshSz7HuKLDCtM';
+const API_KEY = 'AIzaSyC2oj32EFUyYhAsmN1H1LshSz7HuKLDCtM';
 const CX_KEY = 'a230bcd809ae047f3';
 const searchButton = document.getElementById('searchButton');
 const searchInput = document.getElementById('searchInput');

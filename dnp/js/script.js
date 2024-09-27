@@ -3,7 +3,7 @@ const CX_KEY = 'a230bcd809ae047f3';
 const searchButton = document.getElementById('searchButton');
 const searchInput = document.getElementById('searchInput');
 const resultsDiv = document.getElementById('results');
-const backendURL = 'https://aware-winter-tarsal.glitch.me/log';
+const backendURL = 'https://YOUR_GLITCH_PROJECT_URL/log';
 
 const urlParams = new URLSearchParams(window.location.search);
 const queryParam = urlParams.get('query');

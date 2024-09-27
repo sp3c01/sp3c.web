@@ -7,62 +7,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.dnp">
-    <title>dnp</title>
+    <title>Busca PDF</title>
     <link rel="stylesheet" href="dnp/css/ド-ル-ボ-ラ-ルグレフト-ブムフク.css">
-    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
-    <div id="app">
-        <header>
-            <img src="dnp/images/pirate.png" alt="Logo" style="height: 40px; margin-right: 10px;" onclick="window.location.href='index.html'">
-            <input type="text" id="search-bar" placeholder="Pirate Search">
-            <button id="search-button">Pirate Search</button>
-        </header>
-
-        <div id="video-player-container" style="display: none;">
-            <div id="player"></div>
-        </div>
-
-        <main id="video-container">
-        </main>
+    <div class="container">
+        <img src="dnp/img/pirate.png" alt="Pirate" class="logo">
+        <input type="text" id="searchInput" placeholder="Pirate Search">
+        <button id="searchButton">Pirate Search</button>
+        <div id="results"></div>
     </div>
-
     <script src="dnp/js/script.js"></script>
-    <script>
-        let player;
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '500',
-                width: '100%',
-                videoId: '',
-                playerVars: {
-                    'playsinline': 1,
-                    'controls': 1,
-                    'modestbranding': 1,
-                    'color': 'blue',
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-        }
-
-        function onPlayerStateChange(event) {
-        }
-
-        function playVideo(videoId) {
-            player.loadVideoById(videoId);
-            document.getElementById('video-player-container').style.display = 'block';
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
 </body>
 </html>

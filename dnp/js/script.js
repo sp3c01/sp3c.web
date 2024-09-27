@@ -1,8 +1,9 @@
+const API_KEY = 'AIzaSyC2oj32EFUyYhAsmN1H1LshSz7HuKLDCtM';
+const CX_KEY = 'a230bcd809ae047f3';
 const searchButton = document.getElementById('searchButton');
 const searchInput = document.getElementById('searchInput');
 const resultsDiv = document.getElementById('results');
 const backendURL = 'https://aware-winter-tarsal.glitch.me/log';
-const searchBackendURL = 'https://aware-winter-tarsal.glitch.me/search'; 
 
 const urlParams = new URLSearchParams(window.location.search);
 const queryParam = urlParams.get('query');
@@ -41,14 +42,10 @@ function updateURL(query) {
 }
 
 async function searchPDFs(query) {
+    const url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CX_KEY}&q=${query}+filetype:pdf`;
+    
     try {
-        const response = await fetch(searchBackendURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ query: query })
-        });
+        const response = await fetch(url);
         const data = await response.json();
         
         displayResults(data.items);

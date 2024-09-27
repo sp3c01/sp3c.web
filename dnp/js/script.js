@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyC2oj32EFUyYhAsmN1H1LshSz7HuKLDCtM';
+const API_KEY = 'AIzaSyC2oj32EFUyHhAsmN1H1LshSz7HuKLDCtM';
 const CX_KEY = 'a230bcd809ae047f3';
 const searchButton = document.getElementById('searchButton');
 const searchInput = document.getElementById('searchInput');
@@ -22,14 +22,14 @@ searchButton.addEventListener('click', () => {
     }
 });
 
-async function logInteraction(query) {
+async function logInteraction(data) {
     try {
         await fetch(backendURL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ action: 'search', query: query })
+            body: JSON.stringify({ action: 'search', data: data })
         });
     } catch (error) {
         console.error('Erro ao registrar a interação:', error);
@@ -49,6 +49,8 @@ async function searchPDFs(query) {
         const data = await response.json();
         
         displayResults(data.items);
+        // Log the entire response for debugging
+        logInteraction({ action: 'results', query: query, results: data.items });
     } catch (error) {
         console.error('Erro ao buscar PDFs:', error);
         resultsDiv.innerHTML = 'Erro ao buscar PDFs. Tente novamente.';

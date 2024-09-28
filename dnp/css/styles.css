@@ -93,6 +93,7 @@ button:hover {
     color: #000000;
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.8em;
 }
 
 .result-card a:hover {

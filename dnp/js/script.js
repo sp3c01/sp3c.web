@@ -2,10 +2,6 @@ document.getElementById('search-form').addEventListener('submit', function(event
   event.preventDefault();
   const query = document.getElementById('search-query').value;
 
-  // Atualiza a URL com a pesquisa
-  const newUrl = '?query=' + encodeURIComponent(query);
-  window.history.pushState({ path: newUrl }, '', newUrl);
-
   fetch('https://oil-spot-pediatrician.glitch.me/search?query=' + encodeURIComponent(query))
     .then(response => response.json())
     .then(data => {

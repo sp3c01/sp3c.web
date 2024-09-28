@@ -2,21 +2,11 @@ document.getElementById('search-form').addEventListener('submit', function(event
   event.preventDefault();
   const query = document.getElementById('search-query').value;
 
-  if (!query) {
-    alert('Por favor, insira um termo de pesquisa.');
-    return;
-  }
-
   const newUrl = '?query=' + encodeURIComponent(query);
   window.history.pushState({ path: newUrl }, '', newUrl);
 
-  fetch('https://oil-spot-pediatrician.glitch.me/search' + newUrl)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
+  fetch('https://oil-spot-pediatrician.glitch.me/search?query=' + encodeURIComponent(query))
+    .then(response => response.json())
     .then(data => {
       let resultsDiv = document.getElementById('results');
       resultsDiv.innerHTML = '';
@@ -42,8 +32,5 @@ document.getElementById('search-form').addEventListener('submit', function(event
         resultCard.appendChild(snippetDiv);
         resultsDiv.appendChild(resultCard);
       });
-    })
-    .catch(error => {
-      console.error('Error:', error);
     });
 });

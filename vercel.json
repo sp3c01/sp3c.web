@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "devCommand": "npm run dev",
+  "builds": [
+    {
+      "src": "backend/src/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "installCommand": "npm install",
+  "cleanUrls": true
+}

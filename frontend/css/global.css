@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  font-size: 15px;
+}
+
+body {
+  background: url("../images/background.png");
+  background-size: 280px;
+  background-repeat: repeat;
+  color: #f2f2f2;
+}
+
+.container {
+  width: 100%;
+  height: calc(100dvh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  display: none;
+  flex-grow: 1;
+  justify-content: space-between;
+  background-color: rgb(85, 85, 85);
+  padding: 20px;
+  z-index: 1;
+}
+
+.banner h2 {
+  font-family: "Righteous", sans-serif;
+}
+
+.banner-link {
+  color: white;
+  padding-right: 20px;
+}
+
+.title {
+  font-family: "Righteous", sans-serif;
+  text-shadow: 1px 3px 3px black;
+}
+
+.link {
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition-duration: 0.7s;
+}
+
+.link:hover {
+  background-color: white;
+  color: #212121;
+}

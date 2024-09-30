@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById('password');
     const submitPasswordButton = document.getElementById('submit-password');
 
-    // Função para carregar entradas
     function loadEntries(password) {
         fetch(`https://veil-literate-ferry.glitch.me/entries?password=${password}`)
             .then(response => {
@@ -26,11 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error(error));
     }
 
-    // Acessar o diário
     submitPasswordButton.addEventListener('click', () => {
         const password = passwordInput.value;
         if (password) {
-            // Exibir o formulário e carregar as entradas
             form.style.display = 'block';
             loadEntries(password);
         } else {
@@ -38,13 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Adiciona entrada
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const newEntry = {
             date: document.getElementById('date').value,
             content: document.getElementById('content').value,
-            password: passwordInput.value // Captura a senha do input
+            password: passwordInput.value
         };
 
         fetch('https://veil-literate-ferry.glitch.me/entries', {
@@ -63,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(() => {
             form.reset();
-            loadEntries(passwordInput.value); // Recarrega as entradas
+            loadEntries(passwordInput.value);
         })
         .catch(error => console.error(error));
     });

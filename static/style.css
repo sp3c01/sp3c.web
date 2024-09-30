@@ -1,5 +1,5 @@
 html {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
 }
 
 body {
@@ -10,25 +10,23 @@ body {
     padding: 20px;
 }
 
-/* Estilização da barra de rolagem para Chrome, Safari e outros navegadores baseados em WebKit */
 ::-webkit-scrollbar {
-    width: 10px; /* Largura da barra de rolagem */
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #000000; /* Cor do fundo da barra de rolagem */
+    background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #000000; /* Cor preta do "polegar" da barra de rolagem */
-    border-radius: 10px; /* Bordas arredondadas */
-    border: 2px solid #000000; /* Cor da borda para criar um efeito de margem */
+    background-color: #000000;
+    border-radius: 10px;
+    border: 2px solid #000000;
 }
 
-/* Suporte para Firefox */
 body {
-    scrollbar-color: black #000000; /* Cor preta para o polegar e #2b2b2b para o fundo */
-    scrollbar-width: thin; /* Largura fina da barra */
+    scrollbar-color: black #000000;
+    scrollbar-width: thin;
 }
 
 .container {
@@ -41,23 +39,23 @@ body {
 }
 
 .logo {
-    display: block; /* Para centralizar */
-    margin: 0 auto 10px; /* Margem inferior para espaçamento */
-    max-width: 150px; /* Ajuste o tamanho máximo conforme necessário */
-    height: auto; /* Mantém a proporção da imagem */
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 150px;
+    height: auto;
 }
 
 .password-section {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Alinha verticalmente os itens */
+    align-items: center;
     margin-bottom: 20px;
 }
 
 input[type="text"],
 input[type="password"],
 textarea {
-    width: calc(100% - 20px); /* Ajuste de largura */
+    width: calc(100% - 20px);
     margin: 10px 0;
     padding: 10px;
     border: none;
@@ -74,14 +72,14 @@ textarea:focus {
 }
 
 button {
-    padding: 5px 10px; /* Ajuste a altura e a largura do botão */
+    padding: 5px 10px;
     background-color: #000000;
     color: white;
     border: none;
     border-radius: 2px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-left: 5px; /* Adiciona espaçamento à esquerda */
+    margin-left: 5px;
 }
 
 button:hover {

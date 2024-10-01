@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>2 Horas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            touch-action: pan-y;
+        }
+
+        .container {
+            text-align: center;
+            transform: translateY(-50px);
+        }
+
+        .timer {
+            font-size: 5em;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="timer" id="timer">02:00:00</div>
+    </div>
+    <script>
+        let totalSeconds = 7200;
+
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+            
+            const interval = setInterval(() => {
+                const hours = Math.floor(totalSeconds / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = totalSeconds % 60;
+
+                timerElement.textContent = 
+                    String(hours).padStart(2, '0') + ':' + 
+                    String(minutes).padStart(2, '0') + ':' + 
+                    String(seconds).padStart(2, '0');
+
+                totalSeconds--;
+
+                if (totalSeconds < 0) {
+                    clearInterval(interval);
+                }
+            }, 1000);
+        }
+
+        startTimer();
+    </script>
+</body>
+</html>

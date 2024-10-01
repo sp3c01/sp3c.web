@@ -37,30 +37,46 @@
         <div class="timer" id="timer">02:00:00</div>
     </div>
     <script>
-        let totalSeconds = 7200;
+        // Define o tempo total em segundos
+        const totalSeconds = 7200;
+        let remainingSeconds = totalSeconds;
+
+        const storedTime = localStorage.getItem('remainingTime');
+        if (storedTime) {
+            remainingSeconds = parseInt(storedTime, 10);
+        }
 
         function startTimer() {
             const timerElement = document.getElementById('timer');
-            
+
             const interval = setInterval(() => {
-                const hours = Math.floor(totalSeconds / 3600);
-                const minutes = Math.floor((totalSeconds % 3600) / 60);
-                const seconds = totalSeconds % 60;
+                if (remainingSeconds <= 0) {
+                    clearInterval(interval);
+                    remainingSeconds = 0; 
+                }
+
+                const hours = Math.floor(remainingSeconds / 3600);
+                const minutes = Math.floor((remainingSeconds % 3600) / 60);
+                const seconds = remainingSeconds % 60;
 
                 timerElement.textContent = 
                     String(hours).padStart(2, '0') + ':' + 
                     String(minutes).padStart(2, '0') + ':' + 
                     String(seconds).padStart(2, '0');
 
-                totalSeconds--;
+                remainingSeconds--;
 
-                if (totalSeconds < 0) {
-                    clearInterval(interval);
-                }
+                localStorage.setItem('remainingTime', remainingSeconds);
             }, 1000);
         }
-
+        
         startTimer();
+
+        window.addEventListener('beforeunload', () => {
+            if (remainingSeconds <= 0) {
+                localStorage.removeItem('remainingTime');
+            }
+        });
     </script>
 </body>
 </html>
